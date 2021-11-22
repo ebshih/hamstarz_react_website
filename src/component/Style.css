@@ -1,0 +1,788 @@
+*{
+    user-select: none;
+}
+.buy-button{
+    background-color: lightgreen;
+    height: 30px;
+    width: 30px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.button-text{
+    font-size: 22px;
+    color: black;
+    user-select: none;
+}
+
+.value-text{
+    font-size: 25px;
+    color: #c4c4c4;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.row-container{
+    display: flex;
+    flex-direction: row;
+    width: 200px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.container{
+    height: 70px;
+    background-color: rgba(0,0,0,0.5);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    padding-left: 10px;
+    z-index: 100;
+}
+
+.logo-img{
+    cursor: pointer;
+    height: 50px;
+}
+
+.menu-text{
+    font-size: 18px;
+    color: #c4c4c4;
+    margin-right: 40px;
+    cursor: pointer;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.menu-text:hover{
+    color: red;
+}
+
+.menu-container {
+    display: flex;
+}
+
+.menu-icon{
+    display: none;
+    height: 60px;
+    cursor: pointer;
+    width: 60px;
+}
+
+.home-social-container{
+    margin-top: 20px;
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+}
+
+.home-container{
+    height: auto;
+    background-image: url("https://images.unsplash.com/photo-1511497584788-876760111969?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: black;
+    border-bottom: 5px dashed lightgreen;
+    padding-top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay{
+    background-color:rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-logo{
+    height: 65px;
+    /* cursor: pointer; */
+}
+
+.split-container{
+    height: 70%;
+    width: 80%;
+    margin-top: 30px;
+    display: flex;
+}
+
+.left-container{
+    width: 50%;
+    height: auto;
+    padding: 20px;
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+}
+
+.right-container {
+    width: 50%;
+    height: auto;
+    padding: 30px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.home-img {
+    height: auto;
+    width: 100%;
+    object-fit: contain;
+}
+
+.story-img {
+    height: auto;
+    width: 80%;
+    object-fit: contain;
+}
+
+.home-button {
+    height: 45px;
+    width: 70%;
+    background-color: lightgreen;
+    margin-top: 20px;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    cursor: pointer;
+}
+
+.home-title {
+    font-size: 45px;
+    color: #c4c4c4;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+}
+
+.home-discr {
+    color: #c4c4c4;
+    font-size: 22px;
+    margin-top: 15px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.home-discr-num {
+    color: #c4c4c4;
+    font-size: 40px;
+    margin-top: 15px;
+    line-height: 30px;
+    margin-top: 22px;
+    margin-bottom: 12px;
+    
+}
+
+.about-container{
+    height: auto;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 50px;
+    border-bottom: 5px dashed lightgreen;
+    padding-top: 70px;
+    
+}
+
+.about-img{
+    height: auto;
+    width: 80%;
+}
+
+.split-container{
+    height: 70%;
+    width: 80%;
+    margin-top: 30px;
+    display: flex;
+}
+
+.about-title {
+    font-size: 30px;
+    color: red;
+    font-weight: 700;
+    text-transform: uppercase;
+    
+}
+
+.about-subtitle{
+    font-size: 28px;
+    color: #c4c4c4;
+    margin-top: 10px;
+}
+
+.about-discr{
+    color: #c4c4c4;
+    font-size: 22px;
+    margin-top: 15px;
+    line-height: 30px;
+    font-weight: 400;
+    text-align: justify;
+}
+
+.about-center-discr{
+    color: #c4c4c4;
+    font-size: 22px;
+    margin-top: 15px;
+    line-height: 30px;
+    font-weight: 300;   
+    
+}
+
+.road-container{
+    height: 80vh;
+    /* background-image: url("https://image.freepik.com/free-vector/nature-scene-rural-land-agriculture-grassland-abtract-silhouette-asian-farmers-working-rice-field-illustration_1150-37317.jpg");
+    background-repeat: no-repeat;
+    background-size: cover; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 50px;
+    background-color: black;
+    border-bottom: 5px dashed lightgreen;
+    padding-top: 70px;
+    
+}
+
+.road-map-container{
+    width: 80%;
+    height: 90%;
+}
+
+.road-card-discr{
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 35px;
+    text-align: center;
+       
+}
+
+.road-card{
+    align-items: center;
+    justify-content: flex-start;
+    width: 90%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.road-card-title{
+    font-size: 22px;
+    color: black;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.story-container{
+    height: auto;
+    /* background-image: url("https://image.freepik.com/free-vector/nature-scene-rural-land-agriculture-grassland-abtract-silhouette-asian-farmers-working-rice-field-illustration_1150-37317.jpg");
+    background-repeat: no-repeat;
+    background-size: cover; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 50px;
+    background-color: black;
+    border-bottom: 5px dashed lightgreen;
+    padding-top: 70px;
+}
+
+.story-right-container {
+    width: 50%;
+    height: 100%;
+    padding: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.faq-container {
+    /* height: 80vh; */
+    height: auto;
+    /* background-image: url("https://image.freepik.com/free-vector/nature-scene-rural-land-agriculture-grassland-abtract-silhouette-asian-farmers-working-rice-field-illustration_1150-37317.jpg");
+    background-repeat: no-repeat;
+    background-size: cover; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 50px;
+    background-color: black;
+    border-bottom: 5px dashed lightgreen;
+    padding-top: 70px;
+}
+
+.faq-box{
+    width: 70%;
+    height: auto;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 25px;
+    padding-right: 25px;
+    align-items: center;
+    padding-top:10px ;
+    padding-bottom: 10px;
+    cursor: pointer;
+    background-color: lightgreen;
+}
+
+.answer-box{
+    height: auto;
+    background-color: lightgreen;
+    width: 70%;
+    padding-left: 25px;
+    padding-right: 25px;
+    font-size: 15px;
+    padding-bottom: 10px;
+}
+
+.faq-title {
+    font-size: 30px;
+    color: red;
+    font-weight: 700;
+    text-transform: uppercase;
+    
+}
+
+.faq-question{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.faq-answer{
+    font-size: 20px;
+}
+
+.card-container{
+    max-height: auto;
+    width: 350px;
+    background-color:black;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    padding-bottom: 30px;
+    border-radius: 5px;
+    border: 4px solid lightgreen;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.perk-container{
+    min-height: auto;
+    /* background-image: url("https://image.freepik.com/free-vector/nature-scene-rural-land-agriculture-grassland-abtract-silhouette-asian-farmers-working-rice-field-illustration_1150-37317.jpg");
+    background-repeat: no-repeat;
+    background-size: cover; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 50px;
+    background-color: black;
+    border-bottom: 5px dashed lightgreen;
+    padding-top: 70px;
+}
+
+.perk-card-container {
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    width: 70%;
+    justify-content: space-between;
+    margin-top: 50px;
+    
+}
+
+.card-title {
+    font-size: 35px;
+    font-weight: 700;
+    color: #c4c4c4;
+    padding-bottom: 15px;
+}
+
+.card-list-container{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+}
+
+.card-list{
+    margin-top: 6px;
+    font-size: 18px;
+    color: #c4c4c4;
+    text-align: left;
+    font-weight: 500;
+}
+
+.team-container{
+    height: auto;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 50px;
+    background-color: black;
+    border-bottom: 5px dashed lightgreen;
+    padding-top: 70px;
+}
+
+.team-img{
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    border-radius: 100px;
+}
+
+.team-card-container{
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.team-card {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.team-name{
+    color: lightgreen;
+    font-size: 25px;
+    margin-top: 25px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.team-discr {
+    color: #c4c4c4;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.footer-container{
+    height: 20vh;
+    background-color: lightgreen;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.foot-social-container{
+    width: 30%;
+    justify-content: space-between;
+    display: flex;
+}
+
+.foot-social-img{
+   height: 50px;
+   width: 50px;
+   border-radius: 25px;
+   cursor: pointer;
+}
+
+@media only screen and (max-width: 1024px) {
+    .menu-container {
+        display: none;
+    }
+
+    .menu-icon{
+        display: flex;
+    }
+
+    .mobile-menu{
+        position: fixed;
+        background-color: tomato;
+        width: 70%;
+        height: 100%;
+        z-index: 150;
+        right: 0;
+        padding-top: 50px;
+
+        text-align: center;
+    }
+
+    .close-icon{
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        width:50px;
+        height:50px;
+        cursor: pointer;
+    }
+
+    .menu-text{
+        margin-top: 50px;
+    }
+
+    .home-container{
+        height: auto;
+        /* background-image: url("../asset/Scene-20.jpg");
+        background-repeat: no-repeat;
+        background-size: cover; */
+        background-color: black;
+        border-bottom: 5px dashed lightgreen;
+        padding-top: 70px;
+    }
+
+    .home-social-container{
+        margin-top: 20px;
+        width: 120%;
+        justify-content: space-between;
+        display: flex;
+    }
+
+    .story-container{
+        height: auto;
+        /* background-image: url("https://image.freepik.com/free-vector/nature-scene-rural-land-agriculture-grassland-abtract-silhouette-asian-farmers-working-rice-field-illustration_1150-37317.jpg");
+        background-repeat: no-repeat;
+        background-size: cover; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 50px;
+        background-color: black;
+        border-bottom: 5px dashed lightgreen;
+        padding-top: 70px;
+    }
+    .about-container{
+        height: auto;
+        background-color: black;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        border-bottom: 5px dashed lightgreen;
+        padding-top: 70px;
+    }
+    .team-card-container{
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        justify-content: space-between;
+        margin-top: 50px;
+    }
+    .team-card {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 50px;
+    }
+    .foot-social-container{
+        width: 50%;
+        justify-content: space-between;
+        display: flex;
+    }
+    .card-container{
+        max-height: auto;
+        width: 350px;
+        background-color:black;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        padding-bottom: 30px;
+        border-radius: 5px;
+        border: 4px solid lightgreen;
+        /* box-shadow: 0 4px 8px 0 rgba(10, 209, 38, 0.2), 0 6px 20px 0 rgba(10, 209, 38, 0.19); */
+    }
+    .perk-card-container {
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        width: 80%;
+        justify-content: space-between;
+        margin-top: 50px;
+    }
+}
+
+@media only screen and (max-width: 765px) {
+    .menu-container {
+        display: none;
+    }
+
+    .menu-icon{
+        display: flex;
+    }
+
+    .home-container{
+        height: auto;
+        /* background-image: url("../asset/Scene-20.jpg");
+        background-repeat: no-repeat;
+        background-size: cover; */
+        background-color: black;
+        border-bottom: 5px dashed lightgreen;
+        padding-top: 70px;
+    }
+
+    .home-social-container{
+        margin-top: 20px;
+        width: 130%;
+        justify-content: space-between;
+        display: flex;
+    }
+
+    .overlay{
+        background-color:rgba(0, 0, 0, 0.5);
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .story-container{
+        height: auto;
+        /* background-image: url("https://image.freepik.com/free-vector/nature-scene-rural-land-agriculture-grassland-abtract-silhouette-asian-farmers-working-rice-field-illustration_1150-37317.jpg");
+        background-repeat: no-repeat;
+        background-size: cover; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 50px;
+        background-color: black;
+        border-bottom: 5px dashed lightgreen;
+        padding-top: 70px;
+    }
+    .about-container{
+        height: auto;
+        background-color: black;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        border-bottom: 5px dashed lightgreen;
+        padding-top: 70px;
+    }
+    .team-card-container{
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        justify-content: space-between;
+        margin-top: 50px;
+    }
+    .team-card {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 50px;
+    }
+    .foot-social-container{
+        width: 50%;
+        justify-content: space-between;
+        display: flex;
+    }
+    .card-container{
+        max-height: auto;
+        width: 280px;
+        border-color:lightgreen;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        padding-bottom: 30px;
+        margin-bottom: 25px;
+        border-radius: 5px;
+        /* box-shadow: 0 4px 8px 0 rgba(10, 209, 38, 0.2), 0 6px 20px 0 rgba(10, 209, 38, 0.19); */
+    }
+    .perk-card-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        width: 80%;
+        justify-content: space-between;
+        margin-top: 50px;
+    }
+
+    .road-map-container{
+        width: 100%;
+    }
+
+    .faq-box{
+        width: 85%;
+        height: auto;
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        padding-left: 25px;
+        padding-right: 25px;
+        align-items: center;
+        padding-top:10px ;
+        padding-bottom: 10px;
+        cursor: pointer;
+        background-color: lightgreen;
+    }
+
+    .answer-box{
+        height: auto;
+        background-color: lightgreen;
+        width: 85%;
+        padding-left: 25px;
+        padding-right: 25px;
+        font-size: 15px;
+        padding-bottom: 10px;
+    }
+
+    .home-logo{
+        height: 40px;
+    }
+
+    .split-container{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-container{
+        width: 85%;
+        height: 100%;
+        padding: 30px;
+        justify-content: center;
+        flex-direction: column;
+        display: flex;
+    }
+    
+    .right-container {
+        width: 85%;
+        height: 100%;
+        padding: 30px;
+    }
+
+    .story-right-container{
+        width: 85%;
+        height: 100%;
+        padding: 30px;
+    }
+
+    .foot-social-container{
+        width: 70%;
+        justify-content: space-between;
+        display: flex;
+    }
+
+    .about-title{
+        font-size: 28px;
+        color: red;
+        text-align: center;
+        
+    }
+}
