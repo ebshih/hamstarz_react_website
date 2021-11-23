@@ -8,8 +8,8 @@ const About_Description = "Lorem ipsum dolor sit amet, consectetur adipiscing el
 
 function Team ({myref}) {
     return (
-       <div ref={myref} className={"team-container"}>
-           <h1 className={"about-title"}>Crew</h1>
+       <div ref={myref} className={"team-container bottom-border"}>
+           <h1 className={"about-title"}>Team</h1>
            <div className={"team-card-container"}>
                {team.map((val)=>{
                    return <Team_Card val={val}/>

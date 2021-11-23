@@ -1,6 +1,13 @@
 *{
     user-select: none;
 }
+
+@font-face {
+    font-family: 'ComicCon';
+    src: local('ComicCon'),
+         url('../fonts/Comicon.otf') format('opentype');
+  }
+
 .buy-button{
     background-color: lightgreen;
     height: 30px;
@@ -34,34 +41,42 @@
     margin-top: 20px;
 }
 
-.container{
+.header-container{
     height: 70px;
-    background-color: rgba(0,0,0,0.5);
     width: 100%;
+    background-color:rgba(0, 0, 0, 0.11);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: fixed;
-    padding-left: 10px;
+    position: absolute;
     z-index: 100;
 }
 
 .logo-img{
-    cursor: pointer;
-    height: 50px;
+    width:1000px;
 }
+
+.header-social-img{
+    height: 36px;
+    width: 36px;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-left: 32px;
+ }
 
 .menu-text{
     font-size: 18px;
     color: #c4c4c4;
-    margin-right: 40px;
+    margin-right: 32px;
     cursor: pointer;
     font-weight: 700;
     text-transform: uppercase;
+    display:flex;
+    align-items:center;
 }
 
 .menu-text:hover{
-    color: red;
+    color: green;
 }
 
 .menu-container {
@@ -75,6 +90,10 @@
     width: 60px;
 }
 
+.bottom-border {
+    border-bottom: 5px solid black;
+}
+
 .home-social-container{
     margin-top: 20px;
     width: 100%;
@@ -84,11 +103,8 @@
 
 .home-container{
     height: auto;
-    background-image: url("https://images.unsplash.com/photo-1511497584788-876760111969?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80");
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: black;
-    border-bottom: 5px dashed lightgreen;
     padding-top: 70px;
     display: flex;
     flex-direction: column;
@@ -96,8 +112,12 @@
     justify-content: center;
 }
 
+.main-logo{
+    height: auto;
+}
+
 .overlay{
-    background-color:rgba(0, 0, 0, 0.5);
+    background-color:rgba(0, 0, 0, 0.11);
     height: 100%;
     width: 100%;
     padding: 30px;
@@ -119,7 +139,7 @@
     display: flex;
 }
 
-.left-container{
+.text-1-of-2-container{
     width: 50%;
     height: auto;
     padding: 20px;
@@ -129,7 +149,7 @@
     align-items: center;
 }
 
-.right-container {
+.image-1-of-2-container {
     width: 50%;
     height: auto;
     padding: 30px;
@@ -138,9 +158,11 @@
     display: flex;
 }
 
-.home-img {
+.sample-img {
     height: auto;
-    width: 100%;
+    width: 300px;
+    background-color:grey;
+    border-radius:24px;
     object-fit: contain;
 }
 
@@ -150,9 +172,62 @@
     object-fit: contain;
 }
 
-.home-button {
+.connect-button {
     height: 45px;
-    width: 70%;
+
+    background-color: lightgreen;
+    margin-top: 20px;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    cursor: pointer;
+}
+
+.mint-feedback {
+    padding: 16px 0;
+}
+
+.mint-quantity-bar {
+    display:flex;
+    border: 1px solid black;
+    margin-top:12px;
+}
+
+.inc-button, .dec-button {
+    padding: 10px;
+    border-radius: 100%;
+    border: none;
+    background-color: #ebc908;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 15px;
+    color: #1a1a1a;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 0px -2px rgba(250, 250, 250, 0.3);
+    -webkit-box-shadow: 0px 4px 0px -2px rgba(250, 250, 250, 0.3);
+    -moz-box-shadow: 0px 4px 0px -2px rgba(250, 250, 250, 0.3);
+    :active {
+        box-shadow: none;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+  }
+}
+
+.mint-quantity-counter {
+    text-align:center;
+    color: #1a1a1a;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.connect-button, .mint-button {
+    height: 45px;
     background-color: lightgreen;
     margin-top: 20px;
     border-radius: 5px;
@@ -164,38 +239,35 @@
 
 .home-title {
     font-size: 45px;
-    color: #c4c4c4;
     text-transform: uppercase;
     font-weight: 700;
     text-align: center;
+    font-family: 'ComicCon';
 }
 
-.home-discr {
-    color: #c4c4c4;
+.home-desc {
     font-size: 22px;
     margin-top: 15px;
     line-height: 30px;
     text-align: center;
 }
 
-.home-discr-num {
-    color: #c4c4c4;
+.home-desc-num {
     font-size: 40px;
     margin-top: 15px;
     line-height: 30px;
     margin-top: 22px;
     margin-bottom: 12px;
-    
+    font-family: 'ComicCon';
 }
 
 .about-container{
     height: auto;
-    background-color: black;
+    background-color: #f7eee9;
     display: flex;
     align-items: center;
     flex-direction: column;
     padding-bottom: 50px;
-    border-bottom: 5px dashed lightgreen;
     padding-top: 70px;
     
 }
@@ -214,25 +286,35 @@
 
 .about-title {
     font-size: 30px;
-    color: red;
     font-weight: 700;
     text-transform: uppercase;
     
 }
 
-.about-subtitle{
-    font-size: 28px;
-    color: #c4c4c4;
-    margin-top: 10px;
+.description {
+    color: black;
+    font-size: 22px;
+    text-align: center;
 }
 
-.about-discr{
-    color: #c4c4c4;
-    font-size: 22px;
-    margin-top: 15px;
-    line-height: 30px;
-    font-weight: 400;
-    text-align: justify;
+.spacerXSmall {
+    height:8px;
+    width: 8px;
+}
+
+.spacerSmall {
+    height:16px;
+    width: 16px;
+}
+
+.spacerMedium {
+    height:24px;
+    width: 24px;
+}
+
+.spacerLarge {
+    height:32px;
+    width: 32px;
 }
 
 .about-center-discr{
@@ -254,8 +336,7 @@
     align-items: center;
     justify-content: center;
     padding-bottom: 50px;
-    background-color: black;
-    border-bottom: 5px dashed lightgreen;
+    background-color: #f7eee9;
     padding-top: 70px;
     
 }
@@ -297,8 +378,7 @@
     flex-direction: column;
     align-items: center;
     padding-bottom: 50px;
-    background-color: black;
-    border-bottom: 5px dashed lightgreen;
+    background-color: #f7eee9;
     padding-top: 70px;
 }
 
@@ -320,8 +400,7 @@
     flex-direction: column;
     align-items: center;
     padding-bottom: 50px;
-    background-color: black;
-    border-bottom: 5px dashed lightgreen;
+    background-color: #f7eee9;
     padding-top: 70px;
 }
 
@@ -337,12 +416,12 @@
     padding-top:10px ;
     padding-bottom: 10px;
     cursor: pointer;
-    background-color: lightgreen;
+    background-color: #f7eee9;
 }
 
 .answer-box{
     height: auto;
-    background-color: lightgreen;
+    background-color: #f7eee9;
     width: 70%;
     padding-left: 25px;
     padding-right: 25px;
@@ -352,7 +431,6 @@
 
 .faq-title {
     font-size: 30px;
-    color: red;
     font-weight: 700;
     text-transform: uppercase;
     
@@ -370,7 +448,7 @@
 .card-container{
     max-height: auto;
     width: 350px;
-    background-color:black;
+    background-color: #f7eee9;
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -391,8 +469,7 @@
     flex-direction: column;
     align-items: center;
     padding-bottom: 50px;
-    background-color: black;
-    border-bottom: 5px dashed lightgreen;
+    background-color: #f7eee9;
     padding-top: 70px;
 }
 
@@ -430,22 +507,14 @@
 
 .team-container{
     height: auto;
-    background-color: black;
+    background-color: #f7eee9;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-bottom: 50px;
-    background-color: black;
-    border-bottom: 5px dashed lightgreen;
     padding-top: 70px;
 }
 
-.team-img{
-    height: 200px;
-    width: 200px;
-    object-fit: cover;
-    border-radius: 100px;
-}
 
 .team-card-container{
     display: flex;
@@ -459,40 +528,53 @@
     align-items: center;
     display: flex;
     flex-direction: column;
+    width:100%;
+    height:auto;
+    padding: 0 17px;
+}
+
+.team-img{
+    width:100%;
+    height:auto;
+    object-fit: contain;
+    border-radius: 24px;
 }
 
 .team-name{
-    color: lightgreen;
-    font-size: 25px;
-    margin-top: 25px;
-    font-weight: 700;
-    text-transform: uppercase;
+    font-size: 32px;
+    margin-top: 32px;
+    /*text-transform: uppercase;*/
 }
 
-.team-discr {
-    color: #c4c4c4;
-    font-size: 20px;
+.team-desc {
+    font-size: 16px;
     margin-top: 10px;
+    font-weight:400;
 }
 
 .footer-container{
     height: 20vh;
-    background-color: lightgreen;
+    background-color: #f7eee9;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+}
+
+.foot-copyright {
+    width:50%%;
 }
 
 .foot-social-container{
-    width: 30%;
-    justify-content: space-between;
+    width: 50%;
+    justify-content: flex-end;
     display: flex;
 }
 
 .foot-social-img{
-   height: 50px;
-   width: 50px;
-   border-radius: 25px;
+   height: 36px;
+   width: 36px;
+   border-radius: 16px;
+   margin-right:32px;
    cursor: pointer;
 }
 
@@ -507,7 +589,7 @@
 
     .mobile-menu{
         position: fixed;
-        background-color: tomato;
+        background-color: green;
         width: 70%;
         height: 100%;
         z-index: 150;
@@ -533,11 +615,13 @@
     .home-container{
         height: auto;
         /* background-image: url("../asset/Scene-20.jpg");
-        background-repeat: no-repeat;
-        background-size: cover; */
-        background-color: black;
-        border-bottom: 5px dashed lightgreen;
+        background-repeat: no-repeat;*/
+        background-size: cover; 
         padding-top: 70px;
+    }
+
+    .logo-img{
+        width:100%;
     }
 
     .home-social-container{
@@ -556,17 +640,15 @@
         flex-direction: column;
         align-items: center;
         padding-bottom: 50px;
-        background-color: black;
-        border-bottom: 5px dashed lightgreen;
+        background-color: #f7eee9;
         padding-top: 70px;
     }
     .about-container{
         height: auto;
-        background-color: black;
+        background-color: #f7eee9;
         display: flex;
         align-items: center;
         flex-direction: column;
-        border-bottom: 5px dashed lightgreen;
         padding-top: 70px;
     }
     .team-card-container{
@@ -591,7 +673,7 @@
     .card-container{
         max-height: auto;
         width: 350px;
-        background-color:black;
+        background-color: #f7eee9;
         align-items: center;
         display: flex;
         flex-direction: column;
@@ -616,6 +698,10 @@
         display: none;
     }
 
+    .logo-img{
+        width:100%;
+    }
+
     .menu-icon{
         display: flex;
     }
@@ -623,10 +709,9 @@
     .home-container{
         height: auto;
         /* background-image: url("../asset/Scene-20.jpg");
-        background-repeat: no-repeat;
-        background-size: cover; */
-        background-color: black;
-        border-bottom: 5px dashed lightgreen;
+        background-repeat: no-repeat;*/
+        background-size: cover; 
+        background-color: #f7eee9;
         padding-top: 70px;
     }
 
@@ -638,7 +723,6 @@
     }
 
     .overlay{
-        background-color:rgba(0, 0, 0, 0.5);
         height: 100%;
         width: 100%;
         display: flex;
@@ -656,17 +740,15 @@
         flex-direction: column;
         align-items: center;
         padding-bottom: 50px;
-        background-color: black;
-        border-bottom: 5px dashed lightgreen;
+        background-color: #f7eee9;
         padding-top: 70px;
     }
     .about-container{
         height: auto;
-        background-color: black;
+        background-color: #f7eee9;
         display: flex;
         align-items: center;
         flex-direction: column;
-        border-bottom: 5px dashed lightgreen;
         padding-top: 70px;
     }
     .team-card-container{
@@ -727,12 +809,12 @@
         padding-top:10px ;
         padding-bottom: 10px;
         cursor: pointer;
-        background-color: lightgreen;
+        background-color: #f7eee9;
     }
 
     .answer-box{
         height: auto;
-        background-color: lightgreen;
+        background-color: #f7eee9;
         width: 85%;
         padding-left: 25px;
         padding-right: 25px;
@@ -781,7 +863,6 @@
 
     .about-title{
         font-size: 28px;
-        color: red;
         text-align: center;
         
     }

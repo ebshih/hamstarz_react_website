@@ -4,7 +4,7 @@ import { Chrono } from "react-chrono";
 
 function RoadMap({ myref }) {
     return (
-        <div ref={myref} className={"road-container"}>
+        <div ref={myref} className={"road-container bottom-border"}>
             <h1 className={"about-title"}>Road Map</h1>
             <div className={"road-map-container"}>
                 <Chrono

@@ -1,22 +1,18 @@
 import { useRef } from "react";
 import Navigation from './component/Navigation'
 import Home from "./component/Home";
-import About from "./component/About";
 import Story from "./component/Story";
 import FAQ from "./component/FAQ";
 import RoadMap from "./component/RoadMap";
-import Perks from "./component/Perks";
 import Team from './component/Team';
 import Footer from './component/Footer';
 
 function App() {
 
   const home = useRef(null)
-  const about = useRef(null)
   const story = useRef(null)
   const road = useRef(null)
   const faq = useRef(null)
-  const perks = useRef(null)
   const team = useRef(null)
   const footer = useRef(null)
 
@@ -31,12 +27,7 @@ function App() {
         top: home.current.offsetTop,
         behavior: "smooth"
       })
-    } else if (val == "a") {
-      window.scrollTo({
-        top: about.current.offsetTop,
-        behavior: "smooth"
-      })
-    } else if (val == "r") {
+    }  else if (val == "r") {
       window.scrollTo({
         top: road.current.offsetTop,
         behavior: "smooth"
@@ -44,12 +35,6 @@ function App() {
     } else if (val == "f") {
       window.scrollTo({
         top: faq.current.offsetTop,
-        behavior: "smooth"
-      })
-    }
-    else if (val == "p") {
-      window.scrollTo({
-        top: perks.current.offsetTop,
         behavior: "smooth"
       })
     } else if (val == "c") {
@@ -69,9 +54,7 @@ function App() {
     <div>
       <Navigation scrollTo={scrollTo} />
       <Home myref={home} />
-      <About myref={about} />
       <Story myref={story} />
-      <Perks myref={perks} />
       <RoadMap myref={road} />
       <FAQ myref={faq} />
       <Team myref={team} />
