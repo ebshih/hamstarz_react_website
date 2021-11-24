@@ -12,7 +12,7 @@
   "WEI_COST": 2000000000000000,
   "DISPLAY_COST": 0.002,
   "GAS_LIMIT": 285000,
-  "MARKETPLACE": "Opensea",
+  "MARKETPLACE": "OpenSea",
   "MARKETPLACE_LINK": "https://testnets.opensea.io/collection/hamz-squadtest",
   "SHOW_BACKGROUND": true
 }

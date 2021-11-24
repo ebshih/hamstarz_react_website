@@ -103,6 +103,8 @@
 
 .home-container{
     height: auto;
+    background-image: url("https://images.squarespace-cdn.com/content/v1/616d0df99d00504eedaca23b/72c3dd76-6879-41e4-86c9-79b96f799d02/grassy_plains.png");
+    /* style={{ backgroundImage: `url(${bgimage})` }}*/
     background-repeat: no-repeat;
     background-size: cover;
     padding-top: 70px;
@@ -614,8 +616,8 @@
 
     .home-container{
         height: auto;
-        /* background-image: url("../asset/Scene-20.jpg");
-        background-repeat: no-repeat;*/
+        background-image: url("https://images.squarespace-cdn.com/content/v1/616d0df99d00504eedaca23b/72c3dd76-6879-41e4-86c9-79b96f799d02/grassy_plains.png");
+        /*background-repeat: no-repeat;*/
         background-size: cover; 
         padding-top: 70px;
     }
@@ -708,8 +710,8 @@
 
     .home-container{
         height: auto;
-        /* background-image: url("../asset/Scene-20.jpg");
-        background-repeat: no-repeat;*/
+        background-image: url("https://images.squarespace-cdn.com/content/v1/616d0df99d00504eedaca23b/72c3dd76-6879-41e4-86c9-79b96f799d02/grassy_plains.png");
+        /*background-repeat: no-repeat;*/
         background-size: cover; 
         background-color: #f7eee9;
         padding-top: 70px;

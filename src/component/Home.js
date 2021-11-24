@@ -109,7 +109,7 @@ function Home({ myref }) {
 
 
     return (
-        <div ref={myref} className={"home-container"} style={{ backgroundImage: `url(${bgimage})` }}>
+        <div ref={myref} className={"home-container"} >
             <div className={"overlay"}>
                 <div className="main-logo">
                     <img className={'logo-img'} src={logo}/>
@@ -125,15 +125,14 @@ function Home({ myref }) {
 
                         {Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
                             <>
-                                <p>
-                                    The sale has ended.
+                                <p className={"mint-feedback"}>
+                                    Sold Out!
                                 </p>
-                                <p>
-                                You can still find {CONFIG.NFT_NAME} on 
-                                </p>
-                                <a target={"_blank"} href={CONFIG.MARKETPLACE_LINK}>
-                                {CONFIG.MARKETPLACE}
-                                </a>
+                                <button className={"connect-button"}>
+                                    <a target={"_blank"} href={CONFIG.MARKETPLACE_LINK}>
+                                        Buy Hamstarz on {CONFIG.MARKETPLACE}
+                                    </a>
+                                </button>
                             </>
                         ) : (
                         <>
