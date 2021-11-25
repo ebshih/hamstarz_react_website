@@ -2,12 +2,6 @@
     user-select: none;
 }
 
-@font-face {
-    font-family: 'ComicCon';
-    src: local('ComicCon'),
-         url('../fonts/Comicon.otf') format('opentype');
-  }
-
 .buy-button{
     background-color: lightgreen;
     height: 30px;
