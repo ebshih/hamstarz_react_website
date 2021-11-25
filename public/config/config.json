@@ -14,5 +14,6 @@
   "GAS_LIMIT": 285000,
   "MARKETPLACE": "OpenSea",
   "MARKETPLACE_LINK": "https://testnets.opensea.io/collection/hamz-squadtest",
-  "SHOW_BACKGROUND": true
+  "SHOW_BACKGROUND": true,
+  "PROVIDER": "https://rinkeby.infura.io/v3/314a432a91ca405dac3233444aa9e02c"
 }

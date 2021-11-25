@@ -111,19 +111,6 @@ function Home({ myref }) {
     }, [blockchain.account]);
 
     const getInitialTotalSupply = async () => {
-        const web3 = new Web3(
-            new Web3.providers.HttpProvider(
-              'https://rinkeby.infura.io/v3/314a432a91ca405dac3233444aa9e02c'
-            )
-        );
-        // Get ABI
-        const abiResponse = await fetch("/config/abi.json", {
-            headers: {
-                "Content-Type": "application/json",
-                Accept: "application/json",
-            },
-        });
-        const abi = await abiResponse.json();
         // Get Config
         const configResponse = await fetch("/config/config.json", {
             headers: {
@@ -132,6 +119,19 @@ function Home({ myref }) {
             },
         });
         const config = await configResponse.json();
+        // Get ABI
+        const abiResponse = await fetch("/config/abi.json", {
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+            },
+        });
+        const abi = await abiResponse.json();
+        // Get Web3
+        const web3 = new Web3(
+            new Web3.providers.HttpProvider(config.PROVIDER)
+        );
+        
         // Get Contract
         const hamstarzContract = new web3.eth.Contract(
             abi,
