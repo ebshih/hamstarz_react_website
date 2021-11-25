@@ -180,7 +180,10 @@
     justify-content: center;
     display: flex;
     cursor: pointer;
-    font-family: 'ComicCon';
+    /*font-family: 'ComicCon';*/
+    font-family: 'ComicCon', 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
 }
 
 .connect-button:hover, .mint-button:hover, .market-button:hover {
@@ -242,7 +245,10 @@
     text-transform: uppercase;
     font-weight: 700;
     text-align: center;
-    font-family: 'ComicCon';
+    /*font-family: 'ComicCon';*/
+    font-family: 'ComicCon', 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
 }
 
 .home-desc {
@@ -250,7 +256,10 @@
     margin-top: 15px;
     line-height: 30px;
     text-align: center;
-    font-family: 'ComicCon';
+    /*font-family: 'ComicCon';*/
+    font-family: 'ComicCon', 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
 }
 
 .home-desc-num {
@@ -259,7 +268,10 @@
     line-height: 30px;
     margin-top: 22px;
     margin-bottom: 12px;
-    font-family: 'ComicCon';
+    /*font-family: 'ComicCon';*/
+    font-family: 'ComicCon', 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
 }
 
 .about-container{
