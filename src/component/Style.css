@@ -103,7 +103,7 @@
 
 .home-container{
     height: auto;
-    background-image: url("https://images.squarespace-cdn.com/content/v1/616d0df99d00504eedaca23b/72c3dd76-6879-41e4-86c9-79b96f799d02/grassy_plains.png");
+    /*background-image: url("https://images.squarespace-cdn.com/content/v1/616d0df99d00504eedaca23b/72c3dd76-6879-41e4-86c9-79b96f799d02/grassy_plains.png");*/
     /* style={{ backgroundImage: `url(${bgimage})` }}*/
     background-repeat: no-repeat;
     background-size: cover;
@@ -135,9 +135,9 @@
 }
 
 .split-container{
-    height: 70%;
+    /*height: 70%;
     width: 80%;
-    margin-top: 30px;
+    margin-top: 30px;*/
     display: flex;
 }
 
@@ -174,26 +174,42 @@
     object-fit: contain;
 }
 
-.connect-button {
-    height: 45px;
 
-    background-color: lightgreen;
-    margin-top: 20px;
+.connect-button, .mint-button, .market-button {
+    height: 45px;
+    width: 120px;
+    font-size: 16px;
+    /*background-color: lightgreen;*/
+    background-color: #a8a6a1;
     border-radius: 5px;
     align-items: center;
     justify-content: center;
     display: flex;
     cursor: pointer;
+    font-family: 'ComicCon';
+}
+
+.connect-button:hover, .mint-button:hover, .market-button:hover {
+    background-color: green;
+}
+
+.connect-error-msg {
+    margin:12px;
 }
 
 .mint-feedback {
     padding: 16px 0;
 }
 
+.mint-quantity-container {
+    margin: 12px 0;
+    padding: 12px;
+    border: 1px solid black;
+    border-radius: 12px;
+}
+
 .mint-quantity-bar {
     display:flex;
-    border: 1px solid black;
-    margin-top:12px;
 }
 
 .inc-button, .dec-button {
@@ -204,21 +220,20 @@
     padding: 10px;
     font-weight: bold;
     font-size: 15px;
-    color: #1a1a1a;
     width: 30px;
     height: 30px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0px 4px 0px -2px rgba(250, 250, 250, 0.3);
-    -webkit-box-shadow: 0px 4px 0px -2px rgba(250, 250, 250, 0.3);
-    -moz-box-shadow: 0px 4px 0px -2px rgba(250, 250, 250, 0.3);
-    :active {
-        box-shadow: none;
-        -webkit-box-shadow: none;
-        -moz-box-shadow: none;
-  }
+}
+
+.inc-button:hover, .dec-button:hover {
+    background-color: green;
+}
+
+.inc-button:active, .dec-button:active {
+    background-color: blue;
 }
 
 .mint-quantity-counter {
@@ -226,17 +241,6 @@
     color: #1a1a1a;
     font-size: 16px;
     line-height: 1.6;
-}
-
-.connect-button, .mint-button {
-    height: 45px;
-    background-color: lightgreen;
-    margin-top: 20px;
-    border-radius: 5px;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    cursor: pointer;
 }
 
 .home-title {
@@ -248,10 +252,11 @@
 }
 
 .home-desc {
-    font-size: 22px;
+    font-size: 20px;
     margin-top: 15px;
     line-height: 30px;
     text-align: center;
+    font-family: 'ComicCon';
 }
 
 .home-desc-num {
@@ -280,9 +285,9 @@
 }
 
 .split-container{
-    height: 70%;
+    /*height: 70%;
     width: 80%;
-    margin-top: 30px;
+    margin-top: 30px;*/
     display: flex;
 }
 
@@ -297,6 +302,18 @@
     color: black;
     font-size: 22px;
     text-align: center;
+}
+
+.spacer-horiz-XLarge {
+    width:72px;
+}
+
+.home-left-spacer {
+    width:25%;
+}
+
+.home-right-spacer {
+    width:25%;
 }
 
 .spacerXSmall {
@@ -616,7 +633,7 @@
 
     .home-container{
         height: auto;
-        background-image: url("https://images.squarespace-cdn.com/content/v1/616d0df99d00504eedaca23b/72c3dd76-6879-41e4-86c9-79b96f799d02/grassy_plains.png");
+        /*background-image: url("https://images.squarespace-cdn.com/content/v1/616d0df99d00504eedaca23b/72c3dd76-6879-41e4-86c9-79b96f799d02/grassy_plains.png");*/
         /*background-repeat: no-repeat;*/
         background-size: cover; 
         padding-top: 70px;
@@ -710,7 +727,7 @@
 
     .home-container{
         height: auto;
-        background-image: url("https://images.squarespace-cdn.com/content/v1/616d0df99d00504eedaca23b/72c3dd76-6879-41e4-86c9-79b96f799d02/grassy_plains.png");
+        /*background-image: url("https://images.squarespace-cdn.com/content/v1/616d0df99d00504eedaca23b/72c3dd76-6879-41e4-86c9-79b96f799d02/grassy_plains.png");*/
         /*background-repeat: no-repeat;*/
         background-size: cover; 
         background-color: #f7eee9;
@@ -722,6 +739,14 @@
         width: 130%;
         justify-content: space-between;
         display: flex;
+    }
+
+    .text-1-of-2-container{
+        width: 100%;
+    }
+    
+    .image-1-of-2-container {
+        width: 100%;
     }
 
     .overlay{

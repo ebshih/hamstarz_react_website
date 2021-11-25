@@ -13,8 +13,10 @@ function Home({ myref }) {
     const blockchain = useSelector((state) => state.blockchain);
     const data = useSelector((state) => state.data);
     const [claimingNft, setClaimingNft] = useState(false);
-    const [feedback, setFeedback] = useState(`Click buy to mint your NFT.`);
+    const [feedback, setFeedback] = useState(`Mint Hamstarz`);
     const [mintAmount, setMintAmount] = useState(1);
+
+    const [totalMintedSupply] = useState(0);
     const [CONFIG, SET_CONFIG] = useState({
         CONTRACT_ADDRESS: "",
         SCAN_LINK: "",
@@ -107,20 +109,29 @@ function Home({ myref }) {
         getData();
     }, [blockchain.account]);
 
+    useEffect(() => {
+        const options = {method: 'GET', headers: {Accept: 'application/json'}};
+
+        fetch('https://api.opensea.io/api/v1/collection/doodles-official/stats', options)
+        .then(response => response.json())
+        .then(response => console.log(response))
+        .catch(err => console.error(err));
+    // empty dependency array means this effect will only run once (like componentDidMount in classes)
+    }, []);
+    
 
     return (
-        <div ref={myref} className={"home-container"} >
+        <div ref={myref} className={"home-container"} style={{ backgroundImage: `url(${bgimage})` }}>
             <div className={"overlay"}>
                 <div className="main-logo">
                     <img className={'logo-img'} src={logo}/>
                 </div>
                 <div className="split-container">
-                    <div className={"spacer-horizontal"}/>
+                    <div className={"home-left-spacer"}/>
                     <div className={"image-1-of-2-container"}>
                         <img className={"sample-img"} src={exampleHamstar} />
                     </div>
                     <div className={"text-1-of-2-container"}>
-                        <h2 className={"home-title"}>Mint Hamstarz</h2>
                         <h3 className={"home-desc-num"}>{data.totalSupply} / {CONFIG.MAX_SUPPLY}</h3>
 
                         {Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
@@ -128,7 +139,7 @@ function Home({ myref }) {
                                 <p className={"mint-feedback"}>
                                     Sold Out!
                                 </p>
-                                <button className={"connect-button"}>
+                                <button className={"market-button"}>
                                     <a target={"_blank"} href={CONFIG.MARKETPLACE_LINK}>
                                         Buy Hamstarz on {CONFIG.MARKETPLACE}
                                     </a>
@@ -136,31 +147,27 @@ function Home({ myref }) {
                             </>
                         ) : (
                         <>
-                            <h3 className={"home-desc"}>1 {CONFIG.NFT_NAME} costs {CONFIG.DISPLAY_COST}{" "}{CONFIG.NETWORK.SYMBOL} + gas.</h3>
-
+                            <h2 className={"home-desc"}>
+                                Hamstarz Squad is a collection of 8,888 lovable hamster NFTs living on the Ethereum Blockchain.
+                                <div className={"spacerSmall"}/>
+                                Each hamster is unique, from their core DNA to their lofty ambitions. Take part in their adventure into the metaverse!
+                            </h2>
                             {blockchain.account === "" || blockchain.smartContract === null ? (
                             <>
-                                <h2 className={"home-desc"}>Connect to the {CONFIG.NETWORK.NAME} Mainnet</h2>
-                                    <div className={"connect-button"}>
-                                        <button className={"connect-button"}
-                                            onClick={(e) => {
-                                                e.preventDefault();
-                                                dispatch(connect());
-                                                getData();
-                                            } }
-                                        >
-                                            Connect
-                                        </button>
-                                    </div>
+                                <button className={"connect-button"}
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        dispatch(connect());
+                                        getData();
+                                    } }
+                                >
+                                    Connect
+                                </button>
                                 
                                 {blockchain.errorMsg !== "" ? (
                                     <>
-                                      <p
-                                        style={{
-                                          textAlign: "center"
-                                        }}
-                                      >
-                                        {blockchain.errorMsg}
+                                      <p className={"connect-error-msg"}>
+                                        {blockchain.errorMsg} hihihi
                                       </p>
                                     </>
                                 ) : null}
@@ -168,40 +175,38 @@ function Home({ myref }) {
                             </>
                             ) : (
                             <>
+                                <h3 className={"home-desc"}>1 {CONFIG.NFT_NAME} costs {CONFIG.DISPLAY_COST}{" "}{CONFIG.NETWORK.SYMBOL} + gas.</h3>
                                 <p className={"mint-feedback"}>
                                     {feedback}
                                 </p>
-                                <div />
-                                <div className={"mint-quantity-bar"}>
-                                    <button className={"dec-button"}
-                                        style={{ lineHeight: 0.4 }}
-                                        disabled={claimingNft ? 1 : 0}
-                                        onClick={(e) => {
-                                        e.preventDefault();
-                                        decrementMintAmount();
-                                        }}
-                                    >
-                                        -
-                                    </button>
-                                    <div className={"spacerMedium"}/>
-                                    <p className={"mint-quantity-counter"}>
-                                        {mintAmount}
-                                    </p>
-                                    <div className={"spacerMedium"}/>
-                                    <button className={"inc-button"}
-                                        disabled={claimingNft ? 1 : 0}
-                                        onClick={(e) => {
-                                        e.preventDefault();
-                                        incrementMintAmount();
-                                        }}
-                                    >
-                                        +
-                                    </button>
+                                <div className={"mint-quantity-container"}>
+                                    <div className={"mint-quantity-bar"}>
+                                        <button className={"dec-button"}
+                                            style={{ lineHeight: 0.4 }}
+                                            disabled={claimingNft ? 1 : 0}
+                                            onClick={(e) => {
+                                            e.preventDefault();
+                                            decrementMintAmount();
+                                            }}
+                                        >
+                                            -
+                                        </button>
+                                        <div className={"spacerMedium"}/>
+                                        <p className={"mint-quantity-counter"}>
+                                            {mintAmount}
+                                        </p>
+                                        <div className={"spacerMedium"}/>
+                                        <button className={"inc-button"}
+                                            disabled={claimingNft ? 1 : 0}
+                                            onClick={(e) => {
+                                            e.preventDefault();
+                                            incrementMintAmount();
+                                            }}
+                                        >
+                                            +
+                                        </button>
+                                    </div>
                                 </div>
-                                <div>
-                                    
-                                </div>
-                                <div/>
                                 <div >
                                     <button className={"mint-button"}
                                         disabled={claimingNft ? 1 : 0}
@@ -220,7 +225,7 @@ function Home({ myref }) {
                         </>
                         )}
                     </div>
-                    
+                    <div className={"home-right-spacer"}/>
                     
                 </div>
             </div>
