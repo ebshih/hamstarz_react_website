@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { connect } from "../redux/blockchain/blockchainActions";
 import { fetchData } from "../redux/data/dataActions";
 import './Style.css'
+import Web3 from "web3";
 
 import bgimage from "../asset/bg.png";
 import logo from "../asset/logo.png";
@@ -16,7 +17,7 @@ function Home({ myref }) {
     const [feedback, setFeedback] = useState(`Mint Hamstarz`);
     const [mintAmount, setMintAmount] = useState(1);
 
-    const [totalMintedSupply] = useState(0);
+    const [initialTotalSupply, setInitialTotalSupply] = useState(0);
     const [CONFIG, SET_CONFIG] = useState({
         CONTRACT_ADDRESS: "",
         SCAN_LINK: "",
@@ -109,14 +110,42 @@ function Home({ myref }) {
         getData();
     }, [blockchain.account]);
 
-    useEffect(() => {
-        const options = {method: 'GET', headers: {Accept: 'application/json'}};
+    const getInitialTotalSupply = async () => {
+        const web3 = new Web3(
+            new Web3.providers.HttpProvider(
+              'https://rinkeby.infura.io/v3/314a432a91ca405dac3233444aa9e02c'
+            )
+        );
+        // Get ABI
+        const abiResponse = await fetch("/config/abi.json", {
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+            },
+        });
+        const abi = await abiResponse.json();
+        // Get Config
+        const configResponse = await fetch("/config/config.json", {
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+            },
+        });
+        const config = await configResponse.json();
+        // Get Contract
+        const hamstarzContract = new web3.eth.Contract(
+            abi,
+            config.CONTRACT_ADDRESS
+        );
+        const tokenSupply = await hamstarzContract.methods
+            .tokenSupply()
+            .call();
 
-        fetch('https://api.opensea.io/api/v1/collection/doodles-official/stats', options)
-        .then(response => response.json())
-        .then(response => console.log(response))
-        .catch(err => console.error(err));
-    // empty dependency array means this effect will only run once (like componentDidMount in classes)
+        setInitialTotalSupply(tokenSupply);
+    };
+
+    useEffect(() => {
+        getInitialTotalSupply();
     }, []);
     
 
@@ -132,8 +161,12 @@ function Home({ myref }) {
                         <img className={"sample-img"} src={exampleHamstar} />
                     </div>
                     <div className={"text-1-of-2-container"}>
-                        <h3 className={"home-desc-num"}>{data.totalSupply} / {CONFIG.MAX_SUPPLY}</h3>
+                        {blockchain.account === "" || blockchain.smartContract === null ? (
+                            <h3 className={"home-desc-num"}>{CONFIG.MAX_SUPPLY - initialTotalSupply} / {CONFIG.MAX_SUPPLY} Remaining</h3>
 
+                        ) : (
+                            <h3 className={"home-desc-num"}>{CONFIG.MAX_SUPPLY - data.totalSupply} / {CONFIG.MAX_SUPPLY} Remaining </h3>
+                        )}
                         {Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
                             <>
                                 <p className={"mint-feedback"}>
@@ -161,7 +194,7 @@ function Home({ myref }) {
                                         getData();
                                     } }
                                 >
-                                    Connect
+                                    Connect Wallet
                                 </button>
                                 
                                 {blockchain.errorMsg !== "" ? (
