@@ -50,7 +50,7 @@ function Home({ myref }) {
         setFeedback(``);
         setClaimingNft(true);
         blockchain.smartContract.methods
-        .mint(mintAmount)
+        .whitelistMint(mintAmount)
         .send({
             gasLimit: String(totalGasLimit),
             to: CONFIG.CONTRACT_ADDRESS,
