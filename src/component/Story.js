@@ -5,7 +5,7 @@ import { story } from "../data/data"
 
 function Story({ myref }) {
     return (
-        <div ref={myref} className={"story-container bottom-border"}>
+        <div ref={myref} className={"story-container font-options bottom-border"}>
             <h1 className={"about-title"}>Backstory from our Creator</h1>
             
                 <div className={"story-right-container"}>

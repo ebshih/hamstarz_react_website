@@ -5,7 +5,7 @@ import { fetchData } from "../redux/data/dataActions";
 import './Style.css'
 import Web3 from "web3";
 
-import bgimage from "../asset/bg.png";
+import bgimage from "../asset/parknight.png";
 import logo from "../asset/logo.png";
 import exampleHamstar from "../asset/example.gif";
 
@@ -14,9 +14,11 @@ function Home({ myref }) {
     const blockchain = useSelector((state) => state.blockchain);
     const data = useSelector((state) => state.data);
     const [claimingNft, setClaimingNft] = useState(false);
-    const [feedback, setFeedback] = useState(`Mint Hamstarz`);
-    const [mintAmount, setMintAmount] = useState(1);
-
+    const [feedback, setFeedback] = useState(``);
+    const [mintAmount, setMintAmount] = useState(0);
+    const [totalCost, setTotalCost] = useState(0);
+    const [maxWhitelistMint, setMaxWhitelistMint] = useState(0);
+    const [isWhitelisted, setIsWhitelisted] = useState(false);
     const [initialTotalSupply, setInitialTotalSupply] = useState(0);
     const [CONFIG, SET_CONFIG] = useState({
         CONTRACT_ADDRESS: "",
@@ -44,7 +46,8 @@ function Home({ myref }) {
         let totalGasLimit = String(gasLimit * mintAmount);
         console.log("Cost: ", totalCostWei);
         console.log("Gas limit: ", totalGasLimit);
-        setFeedback(`Minting your ${CONFIG.NFT_NAME}...`);
+        //setFeedback(`Minting your ${CONFIG.NFT_NAME}...`);
+        setFeedback(``);
         setClaimingNft(true);
         blockchain.smartContract.methods
         .mint(mintAmount)
@@ -71,18 +74,35 @@ function Home({ myref }) {
 
     const decrementMintAmount = () => {
         let newMintAmount = mintAmount - 1;
-        if (newMintAmount < 1) {
-        newMintAmount = 1;
+        if (newMintAmount < 0) {
+        newMintAmount = 0;
         }
         setMintAmount(newMintAmount);
+        setTotalCost(newMintAmount * CONFIG.DISPLAY_COST);
     };
 
     const incrementMintAmount = () => {
         let newMintAmount = mintAmount + 1;
-        if (newMintAmount > 10) {
-        newMintAmount = 10;
+        
+        // Presale limits, It's connected properly
+        if (blockchain.account !== "" && blockchain.smartContract !== null) {
+            if (isWhitelisted) {
+                // Make sure newMintAmount doesn't go over the max
+                if (newMintAmount > maxWhitelistMint) {
+                    newMintAmount = maxWhitelistMint;
+                }
+            } else {
+                // Otherwise, it should always stay at 0
+                newMintAmount = 0;
+            }
         }
+        
+        // Public sale numbers
+        /*if (newMintAmount > 20) {
+             newMintAmount = 20;
+        }*/
         setMintAmount(newMintAmount);
+        setTotalCost(newMintAmount * CONFIG.DISPLAY_COST);
     };
 
     const getData = () => {
@@ -108,6 +128,61 @@ function Home({ myref }) {
 
     useEffect(() => {
         getData();
+    }, [blockchain.account]);
+
+    const getMaxWhitelistMint = async () => {
+        try {
+            // If blockchain.account exists, check what the max mint is
+            if (blockchain.account !== "" && blockchain.smartContract !== null) {
+                // Get Config
+                const configResponse = await fetch("/config/config.json", {
+                    headers: {
+                        "Content-Type": "application/json",
+                        Accept: "application/json",
+                    },
+                });
+                const config = await configResponse.json();
+                // Get ABI
+                const abiResponse = await fetch("/config/abi.json", {
+                    headers: {
+                        "Content-Type": "application/json",
+                        Accept: "application/json",
+                    },
+                });
+                const abi = await abiResponse.json();
+                // Get Web3
+                const web3 = new Web3(
+                    new Web3.providers.HttpProvider(config.PROVIDER)
+                );
+                
+                // Get Contract
+                const hamstarzContract = new web3.eth.Contract(
+                    abi,
+                    config.CONTRACT_ADDRESS
+                );
+                
+            
+                    dispatch(fetchData(blockchain.account));
+                
+
+                const maxWhitelistMintAmt = await hamstarzContract.methods
+                    .whitelistMaxMint(blockchain.account)
+                    .call();
+
+                setMaxWhitelistMint(maxWhitelistMintAmt);
+
+                const onWhitelist = await hamstarzContract.methods
+                    .onWhitelist(blockchain.account)
+                    .call();
+                
+                setIsWhitelisted(onWhitelist);
+            }
+        } catch (err) {
+        }
+    };
+
+    useEffect(() => {
+        getMaxWhitelistMint();
     }, [blockchain.account]);
 
     const getInitialTotalSupply = async () => {
@@ -138,7 +213,7 @@ function Home({ myref }) {
             config.CONTRACT_ADDRESS
         );
         const tokenSupply = await hamstarzContract.methods
-            .tokenSupply()
+            .totalPublicSupply()
             .call();
 
         setInitialTotalSupply(tokenSupply);
@@ -155,19 +230,21 @@ function Home({ myref }) {
                 <div className="main-logo">
                     <img className={'logo-img'} src={logo}/>
                 </div>
+                <div className={"logo-vert-spacer"}/>
                 <div className="split-container">
                     <div className={"home-left-spacer"}/>
                     <div className={"image-1-of-2-container"}>
                         <img className={"sample-img"} src={exampleHamstar} />
                     </div>
+                    <div className={"spacer-horiz-XLarge"}/>
                     <div className={"text-1-of-2-container"}>
                         {blockchain.account === "" || blockchain.smartContract === null ? (
-                            <h3 className={"home-desc-num"}>{CONFIG.MAX_SUPPLY - initialTotalSupply} / {CONFIG.MAX_SUPPLY} Remaining</h3>
-
+                            <h3 className={"home-title"}>Welcome to the Hamstarz Squad!</h3>
+                            
                         ) : (
-                            <h3 className={"home-desc-num"}>{CONFIG.MAX_SUPPLY - data.totalSupply} / {CONFIG.MAX_SUPPLY} Remaining </h3>
+                            <h3 className={"home-desc-num"}>Presale Live! {CONFIG.MAX_PUBLIC_SUPPLY - data.totalSupply} / {CONFIG.MAX_SUPPLY} Remaining</h3>
                         )}
-                        {Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
+                        {Number(data.totalSupply) >= CONFIG.MAX_PUBLIC_SUPPLY ? (
                             <>
                                 <p className={"mint-feedback"}>
                                     Sold Out!
@@ -181,9 +258,10 @@ function Home({ myref }) {
                         ) : (
                         <>
                             <h2 className={"home-desc"}>
-                                Hamstarz Squad is a collection of 8,888 lovable hamster NFTs living on the Ethereum Blockchain.
+                                Hamstarz Squad is a collection of 8,888 lovable hamster NFTs living on the Ethereum Blockchain. 
+                                Owning a Hamstar NFT grants you VIP access to our metaverse theme park experiences and exclusive access to our play-to-earn mini-games and tournaments.
+                                You may now purchase your admission ticket for Hamstarzland.
                                 <div className={"spacerSmall"}/>
-                                Each hamster is unique, from their core DNA to their lofty ambitions. Take part in their adventure into the metaverse!
                             </h2>
                             {blockchain.account === "" || blockchain.smartContract === null ? (
                             <>
@@ -194,13 +272,13 @@ function Home({ myref }) {
                                         getData();
                                     } }
                                 >
-                                    Connect Wallet
+                                    Mint Now
                                 </button>
                                 
                                 {blockchain.errorMsg !== "" ? (
                                     <>
                                       <p className={"connect-error-msg"}>
-                                        {blockchain.errorMsg} hihihi
+                                        {blockchain.errorMsg}
                                       </p>
                                     </>
                                 ) : null}
@@ -209,35 +287,39 @@ function Home({ myref }) {
                             ) : (
                             <>
                                 <h3 className={"home-desc"}>1 {CONFIG.NFT_NAME} costs {CONFIG.DISPLAY_COST}{" "}{CONFIG.NETWORK.SYMBOL} + gas.</h3>
-                                <p className={"mint-feedback"}>
-                                    {feedback}
-                                </p>
-                                <div className={"mint-quantity-container"}>
-                                    <div className={"mint-quantity-bar"}>
-                                        <button className={"dec-button"}
-                                            style={{ lineHeight: 0.4 }}
-                                            disabled={claimingNft ? 1 : 0}
-                                            onClick={(e) => {
-                                            e.preventDefault();
-                                            decrementMintAmount();
-                                            }}
-                                        >
-                                            -
-                                        </button>
-                                        <div className={"spacerMedium"}/>
-                                        <p className={"mint-quantity-counter"}>
-                                            {mintAmount}
-                                        </p>
-                                        <div className={"spacerMedium"}/>
-                                        <button className={"inc-button"}
-                                            disabled={claimingNft ? 1 : 0}
-                                            onClick={(e) => {
-                                            e.preventDefault();
-                                            incrementMintAmount();
-                                            }}
-                                        >
-                                            +
-                                        </button>
+                                Connected to {blockchain.account}
+                                Max whitelist mint {maxWhitelistMint} 
+                                <div className={"mint-details-container"}>
+                                    <div className={"mint-quantity-container"}>
+                                        <div className={"mint-quantity-bar"}>
+                                            <button className={"dec-button"}
+                                                style={{ lineHeight: 0.4 }}
+                                                disabled={claimingNft ? 1 : 0}
+                                                onClick={(e) => {
+                                                e.preventDefault();
+                                                decrementMintAmount();
+                                                }}
+                                            >
+                                                -
+                                            </button>
+                                            <div className={"spacerMedium"}/>
+                                            <p className={"mint-quantity-counter"}>
+                                                {mintAmount}
+                                            </p>
+                                            <div className={"spacerMedium"}/>
+                                            <button className={"inc-button"}
+                                                disabled={claimingNft ? 1 : 0}
+                                                onClick={(e) => {
+                                                e.preventDefault();
+                                                incrementMintAmount();
+                                                }}
+                                            >
+                                                +
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h3 className={"home-desc mint-total-cost"}>Total Cost: {totalCost} {CONFIG.NETWORK.SYMBOL}.</h3>
                                     </div>
                                 </div>
                                 <div >
@@ -252,6 +334,9 @@ function Home({ myref }) {
                                         {claimingNft ? "Minting..." : "Mint Now"}
                                     </button>
                                 </div>
+                                <p className={"mint-feedback font-options"}>
+                                    {feedback}
+                                </p>
                             </>
 
                             )}

@@ -1,19 +1,20 @@
 {
-  "CONTRACT_ADDRESS": "0x7E7A3A60A962d1A76498BE8f03a51FF333800Db7",
-  "SCAN_LINK": "https://rinkeby.etherscan.io/address/0x7E7A3A60A962d1A76498BE8f03a51FF333800Db7",
+  "CONTRACT_ADDRESS": "0x5f52ef4577E2A8a449b008B2EC5c15C2533744Ec",
+  "SCAN_LINK": "https://etherscan.io/address/0x49c00e9418adb181acf29eaeba354f4aff58aeb6",
   "NETWORK": {
     "NAME": "Ethereum",
     "SYMBOL": "ETH",
-    "ID": 4
+    "ID": 1
   },
-  "NFT_NAME": "Hamstarz Squad",
-  "SYMBOL": "HSTARZ",
-  "MAX_SUPPLY": 60,
-  "WEI_COST": 2000000000000000,
-  "DISPLAY_COST": 0.002,
-  "GAS_LIMIT": 285000,
+  "NFT_NAME": "Hamstar",
+  "SYMBOL": "HAMSTARZ",
+  "MAX_SUPPLY": 8888,
+  "MAX_PUBLIC_SUPPLY":8788,
+  "WEI_COST": 39500000000000000,
+  "DISPLAY_COST": 0.0395,
+  "GAS_LIMIT": 28500000,
   "MARKETPLACE": "OpenSea",
-  "MARKETPLACE_LINK": "https://testnets.opensea.io/collection/hamz-squadtest",
+  "MARKETPLACE_LINK": "https://opensea.io/collection/the-hamstarz-squad",
   "SHOW_BACKGROUND": true,
-  "PROVIDER": "https://rinkeby.infura.io/v3/314a432a91ca405dac3233444aa9e02c"
+  "PROVIDER": "https://mainnet.infura.io/v3/314a432a91ca405dac3233444aa9e02c"
 }

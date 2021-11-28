@@ -5,7 +5,7 @@ import { faq } from "../data/data";
 
 function FAQ({ myref }) {
     return (
-        <div ref={myref} className={"faq-container bottom-border"}>
+        <div ref={myref} className={"faq-container bottom-border font-options"}>
             <h1 className={"faq-title"}>FAQ</h1>
             {
                 faq.map((val) => {

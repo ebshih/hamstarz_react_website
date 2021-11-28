@@ -35,10 +35,16 @@
     margin-top: 20px;
 }
 
+.font-options {
+    font-family: 'Chakra Petch', 'Coming Soon', 'ComicCon', 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
 .header-container{
     height: 70px;
     width: 100%;
-    background-color:rgba(0, 0, 0, 0.11);
+    background-color:rgba(0, 0, 0, 0.25);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -47,7 +53,20 @@
 }
 
 .logo-img{
-    width:1000px;
+    /*width:1000px;*/
+    width: 500px;
+}
+
+.logo-vert-spacer {
+    height:225px;
+}
+
+.header-logo-img {
+    width: 100px;
+}
+
+.header-logo{
+    height: auto;
 }
 
 .header-social-img{
@@ -60,17 +79,20 @@
 
 .menu-text{
     font-size: 18px;
-    color: #c4c4c4;
+    color: white;
     margin-right: 32px;
     cursor: pointer;
     font-weight: 700;
     text-transform: uppercase;
     display:flex;
     align-items:center;
+    font-family: 'Chakra Petch', 'Coming Soon', 'ComicCon', 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
 }
 
 .menu-text:hover{
-    color: green;
+    color: #c4c4c4;
 }
 
 .menu-container {
@@ -113,10 +135,10 @@
 }
 
 .overlay{
-    background-color:rgba(0, 0, 0, 0.11);
+    background-color:rgba(0, 0, 0, 0.25); /* was .11 */
     height: 100%;
     width: 100%;
-    padding: 30px;
+    padding: 0 30px 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -143,11 +165,13 @@
     flex-direction: column;
     display: flex;
     align-items: center;
+    background-color: #ffffffa8;
+    border-radius: 48px;
 }
 
 .image-1-of-2-container {
     width: 30%;
-    min-width: 300px;
+    min-width: 350px;
     height: auto;
     padding: 30px;
     align-items: center;
@@ -157,10 +181,11 @@
 
 .sample-img {
     height: auto;
-    width: 300px;
+    width: 350px;
     background-color:grey;
     border-radius:24px;
     object-fit: contain;
+    border: 5px solid black;
 }
 
 .story-img {
@@ -171,32 +196,50 @@
 
 
 .connect-button, .mint-button, .market-button {
-    height: 45px;
-    width: 200px;
-    font-size: 16px;
-    /*background-color: lightgreen;*/
-    background-color: #a8a6a1;
+    height: 60px;
+    width: 240px;
+    margin-top: 16px;
+    font-size: 26px;
+    font-weight: 900;
+    /*background-color: #37e273;*/
+    background-color: #fff362;
     border-radius: 5px;
     align-items: center;
     justify-content: center;
     display: flex;
     cursor: pointer;
     /*font-family: 'ComicCon';*/
-    font-family: 'Coming Soon', 'ComicCon', 'Segoe UI', 'Roboto', 'Oxygen',
+    font-family: 'Chakra Petch', 'Coming Soon', 'ComicCon', 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
 }
 
 .connect-button:hover, .mint-button:hover, .market-button:hover {
-    background-color: green;
+    /*background-color: #3cff81;*/
+    background-color: #ffec00;
+}
+
+.connect-button:active, .mint-button:active, .market-button:active {
+    /*background-color: #3cff81;*/
+    background-color: #e9d807;
 }
 
 .connect-error-msg {
     margin:12px;
 }
 
+.not-on-whitelist {
+    text-align: center;
+}
+
 .mint-feedback {
     padding: 16px 0;
+}
+
+.mint-details-container {
+    display: flex;
+    align-items: center;
+  justify-content: center;
 }
 
 .mint-quantity-container {
@@ -204,6 +247,8 @@
     padding: 12px;
     border: 1px solid black;
     border-radius: 12px;
+    /*background-color: #cfff9b;*/
+    background-color: #a8cfff;
 }
 
 .mint-quantity-bar {
@@ -214,40 +259,45 @@
     padding: 10px;
     border-radius: 100%;
     border: none;
-    background-color: #ebc908;
+    /*background-color: #ebc908;*/
+    background-color: #fff362;
     padding: 10px;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 24px;
     width: 30px;
     height: 30px;
     cursor: pointer;
     display: flex;
     align-items: center;
+}
+
+.inc-button {
     justify-content: center;
 }
 
+
 .inc-button:hover, .dec-button:hover {
-    background-color: green;
+    background-color: #ffd900;
 }
 
 .inc-button:active, .dec-button:active {
-    background-color: blue;
+    background-color: #ffbd02;
 }
 
 .mint-quantity-counter {
     text-align:center;
     color: #1a1a1a;
-    font-size: 16px;
-    line-height: 1.6;
+    font-size: 18px;
+    font-weight:bold;
 }
 
 .home-title {
-    font-size: 45px;
-    text-transform: uppercase;
-    font-weight: 700;
+    font-size: 40px;
+    /*text-transform: uppercase;*/
     text-align: center;
+    margin-bottom: 16px;
     /*font-family: 'ComicCon';*/
-    font-family: 'Coming Soon', 'ComicCon', 'Segoe UI', 'Roboto', 'Oxygen',
+    font-family: 'Chakra Petch', 'Coming Soon', 'ComicCon', 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
 }
@@ -256,11 +306,11 @@
     font-size: 20px;
     margin-top: 15px;
     line-height: 30px;
-    text-align: center;
     /*font-family: 'ComicCon';*/
-    font-family: 'Coming Soon','ComicCon', 'Segoe UI', 'Roboto', 'Oxygen',
+    font-family: 'Chakra Petch', 'Coming Soon','ComicCon', 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+    text-align: justify;
 }
 
 .home-desc-num {
@@ -270,9 +320,14 @@
     margin-top: 22px;
     margin-bottom: 12px;
     /*font-family: 'ComicCon';*/
-    font-family: 'Coming Soon', 'ComicCon', 'Segoe UI', 'Roboto', 'Oxygen',
+    font-family: 'Chakra Petch', 'Coming Soon', 'ComicCon', 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+}
+
+.mint-total-cost {
+    padding-left: 16px;
+    margin-top: 0px;
 }
 
 .about-container{
@@ -299,7 +354,7 @@
 }
 
 .about-title {
-    font-size: 30px;
+    font-size: 36px;
     font-weight: 700;
     text-transform: uppercase;
     
@@ -308,7 +363,11 @@
 .description {
     color: black;
     font-size: 22px;
-    text-align: center;
+    text-align: justify;
+}
+
+.spacer-horiz-medium {
+    width:36px;
 }
 
 .spacer-horiz-XLarge {
@@ -316,7 +375,7 @@
 }
 
 .home-left-spacer {
-    width:25%;
+    width:10%;
 }
 
 .home-right-spacer {
@@ -409,7 +468,7 @@
 }
 
 .story-right-container {
-    width: 50%;
+    width: 60%;
     height: 100%;
     padding: 30px;
     align-items: center;
@@ -456,7 +515,7 @@
 }
 
 .faq-title {
-    font-size: 30px;
+    font-size: 36px;
     font-weight: 700;
     text-transform: uppercase;
     
@@ -613,6 +672,9 @@
         display: flex;
     }
 
+    .logo-vert-spacer {
+        height:1px;
+    }
 
     .home-left-spacer {
         width:1%;
@@ -624,13 +686,12 @@
 
     .mobile-menu{
         position: fixed;
-        background-color: green;
+        background-color: #92b700;
         width: 70%;
         height: 100%;
         z-index: 150;
         right: 0;
         padding-top: 50px;
-
         text-align: center;
     }
 
@@ -645,6 +706,14 @@
 
     .menu-text{
         margin-top: 50px;
+        color: black;
+        text-align: center;
+        display: block;
+        font-size: 24px;
+    }
+
+    .menu-text:hover{
+        color: #515151;
     }
 
     .home-container{
@@ -735,6 +804,10 @@
 
     .logo-img{
         width:100%;
+    }
+
+    .logo-vert-spacer {
+        height:1px;
     }
 
     .menu-icon{
