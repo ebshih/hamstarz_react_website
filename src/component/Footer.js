@@ -4,7 +4,7 @@ import { social } from "../data/data";
 export default function Footer({ myref }) {
   return (
     <div ref={myref} className={"footer-container"}>
-      <div className={"foot-copyright"}>© 2021 HamstarzNFT</div>
+      <div className={"foot-copyright"}>© 2021 Hamstarz Studio</div>
       <div className={"foot-social-container"}>
 
         {

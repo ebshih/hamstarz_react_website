@@ -11,6 +11,8 @@ function App() {
 
   const home = useRef(null)
   const story = useRef(null)
+  const road = useRef(null)
+  const faq = useRef(null)
   const team = useRef(null)
   const footer = useRef(null)
 
@@ -23,6 +25,16 @@ function App() {
     } else if (val == "h") {
       window.scrollTo({
         top: home.current.offsetTop,
+        behavior: "smooth"
+      })
+    }  else if (val == "r") {
+      window.scrollTo({
+        top: road.current.offsetTop,
+        behavior: "smooth"
+      })
+    } else if (val == "f") {
+      window.scrollTo({
+        top: faq.current.offsetTop,
         behavior: "smooth"
       })
     } else if (val == "c") {
@@ -43,6 +55,8 @@ function App() {
       <Navigation scrollTo={scrollTo} />
       <Home myref={home} />
       <Story myref={story} />
+      <RoadMap myref={road} />
+      <FAQ myref={faq} />
       <Team myref={team} />
       <Footer myref={footer} />
     </div>

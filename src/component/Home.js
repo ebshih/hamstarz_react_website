@@ -242,7 +242,7 @@ function Home({ myref }) {
                             <h3 className={"home-title"}>Welcome to the Hamstarz Squad!</h3>
                             
                         ) : (
-                            <h3 className={"home-desc-num"}>Presale Live! {CONFIG.MAX_PUBLIC_SUPPLY - data.totalSupply} / {CONFIG.MAX_SUPPLY} Remaining</h3>
+                            <h3 className={"home-desc-num"}>Presale Live!</h3>
                         )}
                         {Number(data.totalSupply) >= CONFIG.MAX_PUBLIC_SUPPLY ? (
                             <>
@@ -260,7 +260,7 @@ function Home({ myref }) {
                             <h2 className={"home-desc"}>
                                 Hamstarz Squad is a collection of 8,888 lovable hamster NFTs living on the Ethereum Blockchain. 
                                 Owning a Hamstar NFT grants you VIP access to our metaverse theme park experiences and exclusive access to our play-to-earn mini-games and tournaments.
-                                You may now purchase your admission ticket for Hamstarzland.
+                                You may now purchase your admission ticket to enter Hamstarzland.
                                 <div className={"spacerSmall"}/>
                             </h2>
                             {blockchain.account === "" || blockchain.smartContract === null ? (
@@ -286,9 +286,12 @@ function Home({ myref }) {
                             </>
                             ) : (
                             <>
+                                <div className={"wallet-desc font-options"}>
+                                    <div className={"wallet-info-truncated"}>Connected to {blockchain.account}</div>
+                                    
+                                    Max whitelist mint quantity for wallet: {maxWhitelistMint} 
+                                </div>
                                 <h3 className={"home-desc"}>1 {CONFIG.NFT_NAME} costs {CONFIG.DISPLAY_COST}{" "}{CONFIG.NETWORK.SYMBOL} + gas.</h3>
-                                Connected to {blockchain.account}
-                                Max whitelist mint {maxWhitelistMint} 
                                 <div className={"mint-details-container"}>
                                     <div className={"mint-quantity-container"}>
                                         <div className={"mint-quantity-bar"}>

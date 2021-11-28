@@ -232,6 +232,19 @@
     text-align: center;
 }
 
+.wallet-desc {
+    padding-top:12px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.wallet-info-truncated {
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .mint-feedback {
     padding: 16px 0;
 }
@@ -248,7 +261,7 @@
     border: 1px solid black;
     border-radius: 12px;
     /*background-color: #cfff9b;*/
-    background-color: #a8cfff;
+    /*background-color: #a8cfff;*/
 }
 
 .mint-quantity-bar {
@@ -412,7 +425,7 @@
 }
 
 .road-container{
-    height: 80vh;
+    /*height: 80vh;*/
     /* background-image: url("https://image.freepik.com/free-vector/nature-scene-rural-land-agriculture-grassland-abtract-silhouette-asian-farmers-working-rice-field-illustration_1150-37317.jpg");
     background-repeat: no-repeat;
     background-size: cover; */
@@ -426,9 +439,26 @@
     
 }
 
-.road-map-container{
-    width: 80%;
-    height: 90%;
+.roadmap-container{
+    width: 60%;
+}
+
+.roadmap-section {
+    padding-top: 24px;
+    padding-bottom:24px;
+    border-bottom: 1px solid black;
+}
+
+.roadmap-section.last-section {
+    border-bottom: none;
+}
+
+.roadmap-section-title {
+    font-size: 24px;
+}
+
+.roadmap-section-data {
+    font-size: 20px;
 }
 
 .road-card-discr{
@@ -527,7 +557,7 @@
 }
 
 .faq-answer{
-    font-size: 20px;
+    font-size: 19px;
 }
 
 .card-container{
@@ -910,7 +940,7 @@
         margin-top: 50px;
     }
 
-    .road-map-container{
+    .roadmap-container{
         width: 100%;
     }
 
