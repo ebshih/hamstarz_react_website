@@ -20,7 +20,7 @@ export const faq = [
     { question: "When is the launch?", answer: "Pre-sale is November 28th @ 6PM EST (11PM GMT) and will be live for 48 hours. Public sale will begin immediately after pre-sale.", key: '3' },
     { question: "How much will it cost to mint each Hamstar?", answer: "Pre-sale is November 28th @ 6PM EST (11PM GMT) and will be live for 48 hours. Public sale will begin immediately after pre-sale.", key: '4' },
     { question: "How many Hamstarz can I mint in pre-sale?", answer: "Check out discord for latest information regarding pre-sale.", key: '5' },
-    { question: "Where can I see the roadmap", answer: "You can find our official roadmap on our website (v2) at https://hamstarznft.io/", key: '6' }
+    { question: "Where can I see the roadmap?", answer: "High level roadmap is posted above under 'Roadmap'. Always check discord for the latest information and updates.", key: '6' }
 ]
 
 export const team = [

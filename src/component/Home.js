@@ -292,6 +292,7 @@ function Home({ myref }) {
                                     Max whitelist mint quantity for wallet: {maxWhitelistMint} 
                                 </div>
                                 <h3 className={"home-desc"}>1 {CONFIG.NFT_NAME} costs {CONFIG.DISPLAY_COST}{" "}{CONFIG.NETWORK.SYMBOL} + gas.</h3>
+                                
                                 <div className={"mint-details-container"}>
                                     <div className={"mint-quantity-container"}>
                                         <div className={"mint-quantity-bar"}>
@@ -321,9 +322,10 @@ function Home({ myref }) {
                                             </button>
                                         </div>
                                     </div>
-                                    <div>
-                                        <h3 className={"home-desc mint-total-cost"}>Total Cost: {totalCost} {CONFIG.NETWORK.SYMBOL}.</h3>
-                                    </div>
+                                    
+                                </div>
+                                <div>
+                                    <h3 className={"home-desc mint-total-cost"}>Total Cost: {totalCost} {CONFIG.NETWORK.SYMBOL}.</h3>
                                 </div>
                                 <div >
                                     <button className={"mint-button"}
