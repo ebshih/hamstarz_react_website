@@ -12,7 +12,7 @@
   "MAX_PUBLIC_SUPPLY":8788,
   "WEI_COST": 39500000000000000,
   "DISPLAY_COST": 0.0395,
-  "GAS_LIMIT": 175000,
+  "GAS_LIMIT": 200000,
   "MARKETPLACE": "OpenSea",
   "MARKETPLACE_LINK": "https://opensea.io/collection/the-hamstarz-squad",
   "SHOW_BACKGROUND": true,
