@@ -18,7 +18,7 @@ export const faq = [
     { question: "What is Hamstarz Squad?", answer: "Hamstarz Squad is a collection of 8,888 lovable hamster NFTs living on the Ethereum Blockchain. Each hamster is uniquely generated from a random combination of over 300 traits, and is your key to our exclusive metaverse theme parks with gaming events and contests with ETH and NFT rewards.", key: '1' },
     { question: "How do I join the Hamstarz Squad?", answer: "Once minting is live, you can connect your Metamask wallet and adopt up to 20 Hamstarz in one transaction. Make sure to have enough ETH to cover any extra gas costs and be careful not to be too slow, once they're gone they're gone and your transaction might fail!", key: '2' },
     { question: "When is the launch?", answer: "Pre-sale is November 28th @ 6PM EST (11PM GMT) and will be live for 48 hours. Public sale will begin immediately after pre-sale.", key: '3' },
-    { question: "How much will it cost to mint each Hamstar?", answer: "Pre-sale is November 28th @ 6PM EST (11PM GMT) and will be live for 48 hours. Public sale will begin immediately after pre-sale.", key: '4' },
+    { question: "How much will it cost to mint each Hamstar?", answer: "Presale price: 0.0395 ETH. Public sale price: 0.045 ETH.", key: '4' },
     { question: "How many Hamstarz can I mint in pre-sale?", answer: "Check out discord for latest information regarding pre-sale.", key: '5' },
     { question: "Where can I see the roadmap?", answer: "High level roadmap is posted above under 'Roadmap'. Always check discord for the latest information and updates.", key: '6' }
 ]
