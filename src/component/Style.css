@@ -716,7 +716,8 @@
 
     .mobile-menu{
         position: fixed;
-        background-color: #92b700;
+        /*background-color: #92b700;*/
+        background-color: #909090fc;
         width: 70%;
         height: 100%;
         z-index: 150;

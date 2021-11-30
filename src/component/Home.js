@@ -42,8 +42,24 @@ function Home({ myref }) {
     const claimNFTs = () => {
         let cost = CONFIG.WEI_COST;
         let gasLimit = CONFIG.GAS_LIMIT;
+        let gasLimitMulti = CONFIG.GAS_LIMIT_MULTI;
         let totalCostWei = String(cost * mintAmount);
         let totalGasLimit = String(gasLimit * mintAmount);
+        if (mintAmount > 1) { // use lower gas limit for multiple transactions
+            totalGasLimit = String(100000 * mintAmount);
+        }
+        if (mintAmount > 2) {
+            totalGasLimit = String(80000 * mintAmount);
+        }
+        if (mintAmount > 3) {
+            totalGasLimit = String(70000 * mintAmount);
+        }
+        if (mintAmount > 4) {
+            totalGasLimit = String(60000 * mintAmount);
+        }
+        if (mintAmount > 9) {
+            totalGasLimit = String(50000 * mintAmount);
+        }
         console.log("Cost: ", totalCostWei);
         console.log("Gas limit: ", totalGasLimit);
         //setFeedback(`Minting your ${CONFIG.NFT_NAME}...`);
