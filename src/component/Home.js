@@ -58,6 +58,9 @@ function Home({ myref }) {
             totalGasLimit = String(60000 * mintAmount);
         }
         if (mintAmount > 9) {
+            totalGasLimit = String(55000 * mintAmount);
+        }
+        if (mintAmount > 14) {
             totalGasLimit = String(50000 * mintAmount);
         }
         console.log("Cost: ", totalCostWei);
