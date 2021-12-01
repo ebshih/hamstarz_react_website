@@ -95,6 +95,10 @@ function RoadMap({ myref }) {
                         <b>3D Playable Avatars. </b> We will create exclusive 3D interactive Hamstar avatars for NFT holders to play with inside our many theme parks and HamstarzCafe. 
 
                         <div className={"spacerSmall"}/>
+                        <b>$HAMMY token. </b> We will integrate a fully compliant native utility token. Earn $HAMMY by holding your Hamstarz and participating in our metaverse gaming experiences and competitions. 
+                        Native token will be your key to unlocking exclusive metaverse experiences and future planned NFT drops.
+
+                        <div className={"spacerSmall"}/>
                         It is our mission to build expand Hamstarzlands into the biggest metaverses and create the best metaverse gaming and social hub for our community.
                         Expect a consistent schedule of social events, gaming tournaments, and contests for our Hamstarz community to play, earn, win prizes, and have fun! 
                          
