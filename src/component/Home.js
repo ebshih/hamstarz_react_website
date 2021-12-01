@@ -291,7 +291,7 @@ function Home({ myref }) {
                                         getData();
                                     } }
                                 >
-                                    Mint Now
+                                    Connect Wallet
                                 </button>
                                 
                                 {blockchain.errorMsg !== "" ? (
