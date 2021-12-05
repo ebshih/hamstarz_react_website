@@ -6,6 +6,7 @@ function Team_Card({val}){
             <img className={"team-img"} src={val.image}/>
             <h1 className={"team-name"}>{val.name}</h1>
             <h2 className={"team-desc"}>{val.desc}</h2>
+            
         </div>
     )
 }

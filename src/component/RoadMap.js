@@ -1,6 +1,11 @@
 import React from 'react';
 import './Style.css'
 import { Chrono } from "react-chrono";
+import nemesis from "../asset/nemesis.png";
+import netvrk from "../asset/netvrk.png";
+import netvrkhoriz from "../asset/netvrkhoriz.png";
+import nemscoin from "../asset/nemscoin.png";
+
 
 function RoadMap({ myref }) {
     return (
@@ -13,8 +18,9 @@ function RoadMap({ myref }) {
                     </h3>
                     <div className={"spacerSmall"}/>
                     <div className={"roadmap-section-data"}>
-                        <b>First NFT Giveaway. </b>
-                        We will be giving away 10 Hamstarz NFTs exclusively to our early adopters. Thank you so much for believing in us!
+                        <b>First Grand Prize and NFT Giveaway. </b>
+                        When the 1337 Hamstar is minted, we will do a $15,000 giveaway to one lucky Hamstar holder! The more Hamstarz you hold the higher your chance to win. 
+                        We will also be giving away 10 Hamstarz NFTs exclusively to our early adopters. Thank you so much for believing in us!
                         <div className={"spacerSmall"}/>
                         <b>Community art & meme contest. </b>
                         We know how important it is to build a strong community from the start, and what better way than with some memes and art. There will be prizes!
@@ -89,20 +95,30 @@ function RoadMap({ myref }) {
                         <div className={"spacerSmall"}/>
 
                         <b>Enjoy HamstarzCafe. </b> 
-                        We will build an interactive hamster-themed cafe for NFT holders to enjoy cozy time in the VR universe.
+                        We will build an interactive hamster-themed cafe for NFT holders to enjoy cozy time in the VR universe. Holding a Hamstarz NFT will grant exclusive access to our HamstarzCafe inside Hamstarzland, where players can compete in speed runs,
+                        2v2 arena games, and tournaments to earn rewards. Champions will be enshrined in the Hamstarz Hall of Fame!
                         <div className={"spacerSmall"}/>
 
                         <b>3D Playable Avatars. </b> We will create exclusive 3D interactive Hamstar avatars for NFT holders to play with inside our many theme parks and HamstarzCafe. 
 
                         <div className={"spacerSmall"}/>
                         <b>$HAMMY token. </b> We will integrate a fully compliant native utility token. Earn $HAMMY by holding your Hamstarz and participating in our metaverse gaming experiences and competitions. 
-                        Native token will be your key to unlocking exclusive metaverse experiences and future planned NFT drops.
+                        $HAMMY token will be your key to unlocking exclusive metaverse experiences and future planned NFT drops.
 
                         <div className={"spacerSmall"}/>
                         It is our mission to build expand Hamstarzlands into the biggest metaverses and create the best metaverse gaming and social hub for our community.
                         Expect a consistent schedule of social events, gaming tournaments, and contests for our Hamstarz community to play, earn, win prizes, and have fun! 
                          
-                         
+                        <div className={"spacerSmall"}/>
+
+                        <div className={"partners-container"}>
+                            <div className={"partner-card"}>
+                                <div ref={myref} className={"partner-logo-wrapper partner-left"} style={{ backgroundImage: `url(${netvrkhoriz})` }}></div>
+                                </div>
+                            <div className={"partner-card"}>
+                                <div ref={myref} className={"partner-logo-wrapper partner-right"} style={{ backgroundImage: `url(${nemesis})` }}></div>
+                                </div>
+                        </div>
                     </div>
              </div>
             </div>

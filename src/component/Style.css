@@ -483,6 +483,31 @@
     text-align: center;
 }
 
+.roadmap-container .partners-container {
+    margin-top: 48px;
+}
+
+.partners-container {
+    display: flex;
+    justify-content: space-around;
+    background-color: #f7eee9;
+}
+
+.partner-logo-wrapper {
+    width: 100%;
+    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+}
+  
+.partner-card {
+    width: 300px;
+    margin: 0 10px;
+    text-align: center;
+    background-repeat: none;
+}
+
 .story-container{
     height: auto;
     /* background-image: url("https://image.freepik.com/free-vector/nature-scene-rural-land-agriculture-grassland-abtract-silhouette-asian-farmers-working-rice-field-illustration_1150-37317.jpg");
@@ -557,6 +582,7 @@
 
 .faq-answer{
     font-size: 19px;
+    font-weight: 500;
 }
 
 .card-container{

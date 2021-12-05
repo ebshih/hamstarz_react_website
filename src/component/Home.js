@@ -15,8 +15,8 @@ function Home({ myref }) {
     const data = useSelector((state) => state.data);
     const [claimingNft, setClaimingNft] = useState(false);
     const [feedback, setFeedback] = useState(``);
-    const [mintAmount, setMintAmount] = useState(0);
-    const [totalCost, setTotalCost] = useState(0);
+    const [mintAmount, setMintAmount] = useState(1);
+    const [totalCost, setTotalCost] = useState(0.045);
     const [maxWhitelistMint, setMaxWhitelistMint] = useState(0);
     const [isWhitelisted, setIsWhitelisted] = useState(false);
     const [initialTotalSupply, setInitialTotalSupply] = useState(0);
@@ -69,7 +69,7 @@ function Home({ myref }) {
         setFeedback(``);
         setClaimingNft(true);
         blockchain.smartContract.methods
-        .whitelistMint(mintAmount)
+        .mint(mintAmount)
         .send({
             gasLimit: String(totalGasLimit),
             to: CONFIG.CONTRACT_ADDRESS,
@@ -93,8 +93,8 @@ function Home({ myref }) {
 
     const decrementMintAmount = () => {
         let newMintAmount = mintAmount - 1;
-        if (newMintAmount < 0) {
-        newMintAmount = 0;
+        if (newMintAmount < 1) {
+        newMintAmount = 1;
         }
         setMintAmount(newMintAmount);
         setTotalCost(newMintAmount * CONFIG.DISPLAY_COST);
@@ -104,7 +104,7 @@ function Home({ myref }) {
         let newMintAmount = mintAmount + 1;
         
         // Presale limits, It's connected properly
-        if (blockchain.account !== "" && blockchain.smartContract !== null) {
+        /*if (blockchain.account !== "" && blockchain.smartContract !== null) {
             if (isWhitelisted) {
                 // Make sure newMintAmount doesn't go over the max
                 if (newMintAmount > maxWhitelistMint) {
@@ -114,12 +114,12 @@ function Home({ myref }) {
                 // Otherwise, it should always stay at 0
                 newMintAmount = 0;
             }
-        }
+        }*/
         
         // Public sale numbers
-        /*if (newMintAmount > 20) {
+        if (newMintAmount > 20) {
              newMintAmount = 20;
-        }*/
+        }
         setMintAmount(newMintAmount);
         setTotalCost(newMintAmount * CONFIG.DISPLAY_COST);
     };
@@ -261,7 +261,7 @@ function Home({ myref }) {
                             <h3 className={"home-title"}>Welcome to the Hamstarz Squad!</h3>
                             
                         ) : (
-                            <h3 className={"home-desc-num"}>Presale Live!</h3>
+                            <h3 className={"home-desc-num"}>Minting Live!</h3>
                         )}
                         {Number(data.totalSupply) >= CONFIG.MAX_PUBLIC_SUPPLY ? (
                             <>
@@ -280,18 +280,13 @@ function Home({ myref }) {
                                 Hamstarz Squad is a collection of 8,888 lovable hamster NFTs living on the Ethereum Blockchain. 
                                 Owning a Hamstar NFT grants you VIP access to our metaverse theme park experiences and exclusive access to our play-to-earn mini-games and tournaments.
                                 You may now purchase your admission ticket to enter Hamstarzland.
-                                <div className={"spacerSmall"}/>
                             </h2>
                             {blockchain.account === "" || blockchain.smartContract === null ? (
                             <>
                                 <button className={"connect-button"}
-                                    onClick={(e) => {
-                                        e.preventDefault();
-                                        dispatch(connect());
-                                        getData();
-                                    } }
+                                    
                                 >
-                                    Connect Wallet
+                                    Minting Dec 7th
                                 </button>
                                 
                                 {blockchain.errorMsg !== "" ? (
@@ -307,8 +302,6 @@ function Home({ myref }) {
                             <>
                                 <div className={"wallet-desc font-options"}>
                                     <div className={"wallet-info-truncated"}>Connected to {blockchain.account}</div>
-                                    
-                                    Max whitelist mint quantity for wallet: {maxWhitelistMint} 
                                 </div>
                                 <h3 className={"home-desc"}>1 {CONFIG.NFT_NAME} costs {CONFIG.DISPLAY_COST}{" "}{CONFIG.NETWORK.SYMBOL} + gas.</h3>
                                 
