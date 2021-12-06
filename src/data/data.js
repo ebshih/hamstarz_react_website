@@ -9,9 +9,7 @@ import sea_black from "../asset/sea-black.png"
 import sea from "../asset/sea.png"
 
 export const story = {
-    Story_Description1: "“When I used to work in the petcare department at PetSmart, I always wondered what life is like for the little critters. Unlike dogs and cats, whom often roam free, little critters like hamsters’ world is inside a small cage.",
-    Story_Description2: "I had a favorite Teddy Bear hamster at work, whom I named Hammy. He was chubby and the most adorable little thing, and I would take him out of the cage and carry him around the store whenever I could. As I was planning to adopt Hammy, while I was away from work, he was adopted by a little girl. I hope Hammy found a sweet home.",
-    Story_Description3: "Hammy is the inspiration for our Hamstarz. During the creation of this collection, I imagined Hammy living his best life with his hamster friends in Hamstarzland. They could all be anything they want, including superheroes. I want to donate a portion of my sales towards hamster rescue charities, so every abandoned or neglected hamster can find a sweet home and live their best lives.”",
+    Story_Description1: "The year is 800 AH (after Hamstarzland), today is the special 800th anniversary of Hamstarzland's Grand Opening. You are among the thousands of excited hammys across Hammyville rushing to the capital city. After hours of waiting in traffic, you have finally arrived at the grand entrance of the park. You just need to purchase an admission ticket to start your magical adventure at Hamstarzland.",
 }
 
 export const faq = [

@@ -258,7 +258,7 @@ function Home({ myref }) {
                     <div className={"spacer-horiz-XLarge"}/>
                     <div className={"text-1-of-2-container"}>
                         {blockchain.account === "" || blockchain.smartContract === null ? (
-                            <h3 className={"home-title"}>Welcome to the Hamstarz Squad!</h3>
+                            <h3 className={"home-title"}>Hamstarzland Ticket Booth</h3>
                             
                         ) : (
                             <h3 className={"home-desc-num"}>Minting Live!</h3>
@@ -277,9 +277,7 @@ function Home({ myref }) {
                         ) : (
                         <>
                             <h2 className={"home-desc"}>
-                                Hamstarz Squad is a collection of 8,888 lovable hamster NFTs living on the Ethereum Blockchain. 
-                                Owning a Hamstar NFT grants you VIP access to our metaverse theme park experiences and exclusive access to our play-to-earn mini-games and tournaments.
-                                You may now purchase your admission ticket to enter Hamstarzland.
+                            Hamstarz Squad is a collection of 8,888 lovable hamster NFTs living on the Ethereum Blockchain. Owning a Hamstar NFT grants you VIP access to our metaverse theme park experiences and exclusive access to our play-to-earn mini-games and tournaments. You may now purchase your admission ticket to enter Hamstarzland.
                             </h2>
                             {blockchain.account === "" || blockchain.smartContract === null ? (
                             <>

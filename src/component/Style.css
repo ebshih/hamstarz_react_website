@@ -188,9 +188,18 @@
     border: 5px solid black;
 }
 
+
+.storyimage-1-of-2-container {
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
 .story-img {
     height: auto;
-    width: 80%;
+    padding-left: 30px;
+    width: 350px;
     object-fit: contain;
 }
 
@@ -508,6 +517,24 @@
     background-repeat: none;
 }
 
+.story-parent-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.story-title {
+    text-align: center;
+}
+
+.story-left-spacer {
+    width:5%;
+}
+
+.story-left-container {
+    width: 45%;
+}
+
 .story-container{
     height: auto;
     /* background-image: url("https://image.freepik.com/free-vector/nature-scene-rural-land-agriculture-grassland-abtract-silhouette-asian-farmers-working-rice-field-illustration_1150-37317.jpg");
@@ -521,10 +548,9 @@
     padding-top: 70px;
 }
 
-.story-right-container {
-    width: 60%;
+.story-contents-container {
     height: 100%;
-    padding: 30px;
+    padding: 30px 30px 0 0;
     align-items: center;
     justify-content: center;
 }
@@ -544,7 +570,7 @@
 }
 
 .faq-box{
-    width: 70%;
+    width: 60%;
     height: auto;
     margin-top: 20px;
     display: flex;
@@ -561,7 +587,7 @@
 .answer-box{
     height: auto;
     background-color: #f7eee9;
-    width: 70%;
+    width: 60%;
     padding-left: 25px;
     padding-right: 25px;
     font-size: 15px;
