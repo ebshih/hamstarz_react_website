@@ -277,7 +277,7 @@ function Home({ myref }) {
                         ) : (
                         <>
                             <h2 className={"home-desc"}>
-                            Hamstarz Squad is a collection of 8,888 lovable hamster NFTs living on the Ethereum Blockchain. Owning a Hamstar NFT grants you VIP access to our metaverse theme park experiences and exclusive access to our play-to-earn mini-games and tournaments. You may now purchase your admission ticket to enter Hamstarzland.
+                            Welcome Hammys, as we celebrate 800th anniversary of Hamstarzland. Purchasing a Hamstarz NFT grants you VIP access to our metaverse theme park and exclusive access to earn rewards and $HAMMY. Purchase your admission ticket to enter Hamstarzland below.
                             </h2>
                             {blockchain.account === "" || blockchain.smartContract === null ? (
                             <>
