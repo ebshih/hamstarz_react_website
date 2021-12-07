@@ -268,7 +268,7 @@ function Home({ myref }) {
                         {Number(data.totalSupply) >= CONFIG.MAX_PUBLIC_SUPPLY ? (
                             <>
                                 <p className={"mint-feedback"}>
-                                    Sold Out!
+                                    Sold Out!!
                                 </p>
                                 <button className={"market-button"}>
                                     <a target={"_blank"} href={CONFIG.MARKETPLACE_LINK}>
