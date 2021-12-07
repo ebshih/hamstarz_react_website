@@ -284,9 +284,13 @@ function Home({ myref }) {
                             {blockchain.account === "" || blockchain.smartContract === null ? (
                             <>
                                 <button className={"connect-button"}
-                                    
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        dispatch(connect());
+                                        getData();
+                                    } }
                                 >
-                                    Live 6PM EST!
+                                    Purchase Now!
                                 </button>
                                 
                                 {blockchain.errorMsg !== "" ? (
