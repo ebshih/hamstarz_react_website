@@ -4,7 +4,7 @@ import Home from "./component/Home";
 import Story from "./component/Story";
 import FAQ from "./component/FAQ";
 import RoadMap from "./component/RoadMap";
-import Partners from "./component/Partners";
+import Timeline from "./component/Timeline";
 import Team from './component/Team';
 import Footer from './component/Footer';
 
@@ -14,7 +14,7 @@ function App() {
   const story = useRef(null)
   const road = useRef(null)
   const faq = useRef(null)
-  const partners = useRef(null);
+  const time = useRef(null);
   const team = useRef(null)
   const footer = useRef(null)
 
@@ -49,6 +49,11 @@ function App() {
         top: footer.current.offsetTop,
         behavior: "smooth"
       })
+    } else if (val == "t") {
+      window.scrollTo({
+        top: time.current.offsetTop,
+        behavior: "smooth"
+      })
     } 
   }
 
@@ -57,7 +62,7 @@ function App() {
       <Navigation scrollTo={scrollTo} />
       <Home myref={home} />
       <Story myref={story} />
-      <RoadMap myref={road} />
+      <Timeline myref={time} />
       <FAQ myref={faq} />
       <Team myref={team} />
       <Footer myref={footer} />

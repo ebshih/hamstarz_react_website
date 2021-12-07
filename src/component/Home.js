@@ -97,7 +97,8 @@ function Home({ myref }) {
         newMintAmount = 1;
         }
         setMintAmount(newMintAmount);
-        setTotalCost(newMintAmount * CONFIG.DISPLAY_COST);
+        let newTotalCost = newMintAmount * CONFIG.DISPLAY_COST;
+        setTotalCost(newTotalCost.toFixed(3));
     };
 
     const incrementMintAmount = () => {
@@ -121,7 +122,8 @@ function Home({ myref }) {
              newMintAmount = 20;
         }
         setMintAmount(newMintAmount);
-        setTotalCost(newMintAmount * CONFIG.DISPLAY_COST);
+        let newTotalCost = newMintAmount * CONFIG.DISPLAY_COST;
+        setTotalCost(newTotalCost.toFixed(3));
     };
 
     const getData = () => {
@@ -284,7 +286,7 @@ function Home({ myref }) {
                                 <button className={"connect-button"}
                                     
                                 >
-                                    Minting Dec 7th
+                                    Live 6PM EST!
                                 </button>
                                 
                                 {blockchain.errorMsg !== "" ? (
@@ -301,7 +303,7 @@ function Home({ myref }) {
                                 <div className={"wallet-desc font-options"}>
                                     <div className={"wallet-info-truncated"}>Connected to {blockchain.account}</div>
                                 </div>
-                                <h3 className={"home-desc"}>1 {CONFIG.NFT_NAME} costs {CONFIG.DISPLAY_COST}{" "}{CONFIG.NETWORK.SYMBOL} + gas.</h3>
+                                <h3 className={"home-desc"}>Each {CONFIG.NFT_NAME} costs {CONFIG.DISPLAY_COST}{" "}{CONFIG.NETWORK.SYMBOL} + gas.</h3>
                                 
                                 <div className={"mint-details-container"}>
                                     <div className={"mint-quantity-container"}>
@@ -346,7 +348,7 @@ function Home({ myref }) {
                                         getData();
                                         }}
                                     >
-                                        {claimingNft ? "Minting..." : "Mint Now"}
+                                        {claimingNft ? "Minting..." : "Mint Now!"}
                                     </button>
                                 </div>
                                 <p className={"mint-feedback font-options"}>

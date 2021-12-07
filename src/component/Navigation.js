@@ -31,7 +31,7 @@ function Navigation({ scrollTo }) {
 
         <div className={"menu-container"}>
           <h2 onClick={() => ClickedMenu("s")} className={"menu-text"}>Story</h2>
-          <h2 onClick={() => ClickedMenu("r")} className={"menu-text"}>Roadmap</h2>
+          <h2 onClick={() => ClickedMenu("t")} className={"menu-text"}>Roadmap</h2>
           <h2 onClick={() => ClickedMenu("f")} className={"menu-text"}>FAQ</h2>
           <h2 onClick={() => ClickedMenu("c")} className={"menu-text"}>Team</h2>
           
@@ -41,7 +41,7 @@ function Navigation({ scrollTo }) {
       {show ?
         <div className={'mobile-menu'}>
           <h2 onClick={() => ClickedMenu("s")} className={"menu-text"}>Story</h2>
-          <h2 onClick={() => ClickedMenu("r")} className={"menu-text"}>Roadmap</h2>
+          <h2 onClick={() => ClickedMenu("t")} className={"menu-text"}>Roadmap</h2>
           <h2 onClick={() => ClickedMenu("f")} className={"menu-text"}>FAQ</h2>
           <h2 onClick={() => ClickedMenu("c")} className={"menu-text"}>Team</h2>
           <img onClick={() => setShow(false)} className={'close-icon'} src={close} ></img>
