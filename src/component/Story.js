@@ -30,10 +30,10 @@ function Story({ myref }) {
             <div className={"spacerSmall"}/>
             <div className={"partners-container"}>
                 <div className={"partner-card"}>
-                    <div ref={myref} className={"partner-logo-wrapper partner-left"} style={{ backgroundImage: `url(${netvrkhoriz})` }}></div>
+                    <div ref={myref} className={"partner-logo-wrapper partner-left"} style={{ backgroundImage: `url(${nemesis})` }}></div>
                     </div>
                 <div className={"partner-card"}>
-                    <div ref={myref} className={"partner-logo-wrapper partner-right"} style={{ backgroundImage: `url(${nemesis})` }}></div>
+                    <div ref={myref} className={"partner-logo-wrapper partner-right"} style={{ backgroundImage: `url(${netvrkhoriz})` }}></div>
                     </div>
             </div>
         </div>

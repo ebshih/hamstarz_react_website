@@ -279,18 +279,13 @@ function Home({ myref }) {
                         ) : (
                         <>
                             <h2 className={"home-desc"}>
-                            Welcome Hammys, as we celebrate the 800th anniversary of Hamstarzland. Purchasing a Hamstarz NFT grants you VIP access to our metaverse theme park and exclusive access to earn rewards and our native token $HAMMY. Purchase your admission ticket to enter Hamstarzland below.
+                            Welcome Hammys, as we celebrate the 800th anniversary of Hamstarzland. Purchasing a Hamstarz NFT grants you VIP access to our metaverse theme park and exclusive access to earn rewards and our native token $HAMMY.
                             </h2>
                             {blockchain.account === "" || blockchain.smartContract === null ? (
                             <>
                                 <button className={"connect-button"}
-                                    onClick={(e) => {
-                                        e.preventDefault();
-                                        dispatch(connect());
-                                        getData();
-                                    } }
                                 >
-                                    Purchase Now!
+                                    Coming Soon
                                 </button>
                                 
                                 {blockchain.errorMsg !== "" ? (
