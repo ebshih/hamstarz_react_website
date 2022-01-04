@@ -5,7 +5,7 @@ import { fetchData } from "../redux/data/dataActions";
 import './Style.css'
 import Web3 from "web3";
 
-import bgimage from "../asset/parknight.png";
+import bgimage from "../asset/parkday.png";
 import logo from "../asset/logo.png";
 import exampleHamstar from "../asset/example.gif";
 

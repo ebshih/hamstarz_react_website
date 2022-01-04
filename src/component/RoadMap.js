@@ -34,7 +34,7 @@ function RoadMap({ myref }) {
                     </h3>
                     <div className={"spacerSmall"}/>
                     <div className={"roadmap-section-data"}>
-                        <b>Hamstarzland Grand Opening. </b> We have been hard at work building our first Hamstarzland theme park in collaboration with The Nemesis metaverse platform, as seen in our Discord sneak peeks. 
+                        <b>Hamstarzland Grand Opening. </b> We have been hard at work building our Hamstarzland theme park in collaboration with The Nemesis metaverse platform, as seen in our Discord sneak peeks. 
                         We will go live with our grand opening and host our first series of community mini-game tournaments to celebrate.
                         <div className={"spacerSmall"}/>
                         <b>Charity Donation Giveaway. </b> 

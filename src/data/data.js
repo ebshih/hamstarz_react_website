@@ -20,8 +20,8 @@ export const faq = [
 ]
 
 export const team = [
-    { name: "Lily", image: hammy1, desc: "Artist and creative lead. Former Twitch creative partner and DPS Moira main.", fb: "https://www.facebook.com/Lillipie102", key: "1" },
-    { name: "Eric", image: hammy2, desc: "Developer. Former elite WoW priest and no-aim-needed Reinhardt main.", key: "2" },
+    { name: "Lily", image: hammy1, desc: "Artist and Creative Lead. Former Twitch creative partner", fb: "https://www.facebook.com/Lillipie102", key: "1" },
+    { name: "Eric", image: hammy2, desc: "Lead Developer and Tech Enthusiast", key: "2" },
 ]
 
 export const social = [

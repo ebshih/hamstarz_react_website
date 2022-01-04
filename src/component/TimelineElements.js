@@ -11,7 +11,7 @@ let timelineElements = [
       id: 2,
       title: "Hamstarzland Grand Opening",
       description:
-        " We have been hard at work building our first Hamstarzland theme park in collaboration with The Nemesis metaverse platform. We will go live with our grand opening to celebrate!",
+        " We have been hard at work building our Hamstarzland theme park in collaboration with The Nemesis metaverse platform. We will go live with our grand opening to celebrate!",
       date: "40% MINTED",
       icon: "work",
     },
