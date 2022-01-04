@@ -5,6 +5,7 @@ import discord_white from "../asset/discord-white.png"
 import hammy1 from "../asset/Hammy1.png"
 import hammy2 from "../asset/Hammy2.png"
 import hammy3 from "../asset/Hammy3.png"
+import hammy4 from "../asset/Hammy4.png"
 import sea_black from "../asset/sea-black.png"
 import sea from "../asset/sea.png"
 
@@ -20,8 +21,10 @@ export const faq = [
 ]
 
 export const team = [
-    { name: "Lily", image: hammy1, desc: "Artist and Creative Lead. Former Twitch creative partner", fb: "https://www.facebook.com/Lillipie102", key: "1" },
-    { name: "Eric", image: hammy2, desc: "Lead Developer and Tech Enthusiast", key: "2" },
+    { name: "Lily", image: hammy1, desc: "Artist & Creative Lead", fb: "https://www.facebook.com/Lillipie102", key: "1" },
+    { name: "Eric", image: hammy2, desc: "Lead Developer & Tech", key: "2" },
+    { name: "Artour", image: hammy3, desc: "Community Manager & PR", key: "3" },
+    { name: "Derp", image: hammy4, desc: "Marketing Lead & Coordinator", key: "4" },
 ]
 
 export const social = [
