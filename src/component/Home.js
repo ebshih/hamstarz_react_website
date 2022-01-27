@@ -6,6 +6,10 @@ import './Style.css'
 import Web3 from "web3";
 
 import bgimage from "../asset/parkday.png";
+import mirror from "../asset/mirror_transparent.png";
+import banner from "../asset/banner_transparent.png";
+import bannerSmall from "../asset/banner_transparent_25px.png";
+import bannerMedium from "../asset/banner_transparent_55px.png";
 import logo from "../asset/logo.png";
 import exampleHamstar from "../asset/example.gif";
 
@@ -246,122 +250,17 @@ function Home({ myref }) {
     
 
     return (
-        <div ref={myref} className={"home-container"} style={{ backgroundImage: `url(${bgimage})` }}>
+        <div ref={myref} className={"home-container"} >
+            
             <div className={"overlay"}>
-                <div className="main-logo">
-                    <img className={'logo-img'} src={logo}/>
-                </div>
-                <div className={"logo-vert-spacer"}/>
-                <div className="split-container">
-                    <div className={"home-left-spacer"}/>
-                    <div className={"image-1-of-2-container"}>
-                        <img className={"sample-img"} src={exampleHamstar} />
-                    </div>
-                    <div className={"spacer-horiz-XLarge"}/>
-                    <div className={"text-1-of-2-container"}>
-                        {blockchain.account === "" || blockchain.smartContract === null ? (
-                            <h3 className={"home-title"}>Hamstarzland Ticket Booth</h3>
-                            
-                        ) : (
-                            <h3 className={"home-desc-num"}>Minting Live!</h3>
-                        )}
-                        {Number(data.totalSupply) >= CONFIG.MAX_PUBLIC_SUPPLY ? (
-                            <>
-                                <p className={"mint-feedback"}>
-                                    Sold Out!!
-                                </p>
-                                <button className={"market-button"}>
-                                    <a target={"_blank"} href={CONFIG.MARKETPLACE_LINK}>
-                                        Buy Hamstarz on {CONFIG.MARKETPLACE}
-                                    </a>
-                                </button>
-                            </>
-                        ) : (
-                        <>
-                            <h2 className={"home-desc"}>
-                            Welcome Hammys, as we celebrate the 800th anniversary of Hamstarzland. Purchasing a Hamstarz NFT grants you VIP access to our metaverse theme park and exclusive access to earn rewards and our native token $HAMMY.
-                            </h2>
-                            {blockchain.account === "" || blockchain.smartContract === null ? (
-                            <>
-                                <button className={"connect-button"}
-                                >
-                                    Coming Soon
-                                </button>
-                                
-                                {blockchain.errorMsg !== "" ? (
-                                    <>
-                                      <p className={"connect-error-msg"}>
-                                        {blockchain.errorMsg}
-                                      </p>
-                                    </>
-                                ) : null}
-                                
-                            </>
-                            ) : (
-                            <>
-                                <div className={"wallet-desc font-options"}>
-                                    <div className={"wallet-info-truncated"}>Connected to {blockchain.account}</div>
-                                </div>
-                                <h3 className={"home-desc"}>Each {CONFIG.NFT_NAME} costs {CONFIG.DISPLAY_COST}{" "}{CONFIG.NETWORK.SYMBOL} + gas.</h3>
-                                
-                                <div className={"mint-details-container"}>
-                                    <div className={"mint-quantity-container"}>
-                                        <div className={"mint-quantity-bar"}>
-                                            <button className={"dec-button"}
-                                                style={{ lineHeight: 0.4 }}
-                                                disabled={claimingNft ? 1 : 0}
-                                                onClick={(e) => {
-                                                e.preventDefault();
-                                                decrementMintAmount();
-                                                }}
-                                            >
-                                                -
-                                            </button>
-                                            <div className={"spacerMedium"}/>
-                                            <p className={"mint-quantity-counter"}>
-                                                {mintAmount}
-                                            </p>
-                                            <div className={"spacerMedium"}/>
-                                            <button className={"inc-button"}
-                                                disabled={claimingNft ? 1 : 0}
-                                                onClick={(e) => {
-                                                e.preventDefault();
-                                                incrementMintAmount();
-                                                }}
-                                            >
-                                                +
-                                            </button>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                                <div>
-                                    <h3 className={"home-desc mint-total-cost"}>Total Cost: {totalCost} {CONFIG.NETWORK.SYMBOL}.</h3>
-                                </div>
-                                <div >
-                                    <button className={"mint-button"}
-                                        disabled={claimingNft ? 1 : 0}
-                                        onClick={(e) => {
-                                        e.preventDefault();
-                                        claimNFTs();
-                                        getData();
-                                        }}
-                                    >
-                                        {claimingNft ? "Minting..." : "Mint Now!"}
-                                    </button>
-                                </div>
-                                <p className={"mint-feedback font-options"}>
-                                    {feedback}
-                                </p>
-                            </>
 
-                            )}
-                        </>
-                        )}
-                    </div>
-                    <div className={"home-right-spacer"}/>
-                    
-                </div>
+                <img className={'outfit-img'} src={mirror}/>
+
+                <div className={"animated-banner"} style={{backgroundImage: `url(${bannerMedium})`}}> </div>
+
+                
+
+
             </div>
         </div>
     );

@@ -6,11 +6,14 @@ import nemesis from "../asset/nemesis.png";
 import netvrk from "../asset/netvrk.png";
 import netvrkhoriz from "../asset/netvrkhoriz.png";
 import nemscoin from "../asset/nemscoin.png";
+import banner from "../asset/banner_transparent.png";
+import bannerSmall from "../asset/banner_transparent_25px.png";
+import bannerMedium from "../asset/banner_transparent_55px.png";
 
 
 function Story({ myref }) {
     return (
-        <div ref={myref} className={"story-container font-options bottom-border"}>
+        <div ref={myref} className={"story-container font-options"}>
             <div className={"story-parent-container"}>
                 <div className={"story-left-spacer"}/>
                 <div className={"story-left-container"}>
@@ -36,6 +39,7 @@ function Story({ myref }) {
                     <div ref={myref} className={"partner-logo-wrapper partner-right"} style={{ backgroundImage: `url(${netvrkhoriz})` }}></div>
                     </div>
             </div>
+            <div className={"animated-banner purple"} style={{backgroundImage: `url(${bannerMedium})`}}> </div>
         </div>
     );
 }
