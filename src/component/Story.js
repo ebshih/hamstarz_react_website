@@ -13,7 +13,7 @@ import bannerMedium from "../asset/banner_transparent_55px.png";
 
 function Story({ myref }) {
     return (
-        <div ref={myref} className={"story-container font-options"}>
+        <div ref={myref} className={"story-container intro font-options"}>
             <div className={"story-parent-container"}>
                 <div className={"story-left-spacer"}/>
                 <div className={"story-left-container"}>
