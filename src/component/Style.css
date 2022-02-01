@@ -232,6 +232,11 @@
 
 .park-construction {
     width: 70%;
+    position: absolute;
+}
+
+.park-placeholder {
+    width: 70%;
 }
 
 
@@ -482,6 +487,20 @@
     text-align: justify;
 }
 
+.description.desc-title {
+    font-size: 28px;
+    font-weight: bold;
+    padding-bottom: 16px;
+}
+
+.description.desc-intro {
+    padding-bottom: 16px;
+}
+
+.description.desc-ending {
+    font-weight: bold;
+}
+
 .spacer-horiz-medium {
     width:36px;
 }
@@ -622,6 +641,10 @@
     background-repeat: none;
 }
 
+.roadmap-timeline.about-title {
+    padding-top: 50px;
+}
+
 .roadmap-timeline {
     padding-bottom: 24px;
 }
@@ -686,6 +709,11 @@
 
 .story-container.intro {
     overflow: hidden;
+}
+
+.story-container.timeline {
+    position: relative;
+    padding-top: 0;
 }
 
 .story-contents-container {
@@ -895,6 +923,10 @@
 
     .menu-icon{
         display: flex;
+    }
+
+    .roadmap-timeline.about-title {
+        padding-top: 0px;
     }
 
     .outfit-img {

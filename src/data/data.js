@@ -11,7 +11,8 @@ import sea_black from "../asset/sea-black.png"
 import sea from "../asset/sea.png"
 
 export const story = {
-    Story_Description1: "The year is 800 AH (after Hammyland), today is the special 800th anniversary of Hammyland's Grand Opening. You are among the thousands of excited hammys across Hammyville rushing to the capital city. After hours of waiting in traffic, you have finally arrived at the grand entrance of the park. Hammy frens are all gathered in the plaza, excited to begin their magical adventure at Hammyland.",
+    Story_Description1: "join your hammy frens and be a kid all day, everyday!",
+    Story_Description2: "The year is 800 AH (after Hammyland), today is the special 800th anniversary of Hammyland's Grand Opening. After hours of waiting in traffic, you have finally arrived at the grand entrance of the park. Hammy frens are all gathered in the plaza, excited to begin their magical adventure at Hammyland.",
 }
 
 export const faq = [

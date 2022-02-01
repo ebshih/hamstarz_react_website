@@ -7,6 +7,7 @@ import banner from "../asset/banner_transparent.png";
 import bannerSmall from "../asset/banner_transparent_45px.png";
 import bannerMedium from "../asset/banner_transparent_55px.png";
 import parkConstruction from "../asset/parkconstruction.png";
+import parkPlaceholder from "../asset/parkconstruction_placeholder1700.png";
 import bannerLong from "../asset/banner_long.png";
 
 import timelineElements from "./TimelineElements";
@@ -23,12 +24,13 @@ function Timeline({ myref }) {
     let schoolIconStyles = { background: "#f9c74f" };
 
     return (
-        <div ref={myref} className={"story-container font-options"}>
+        <div ref={myref} className={"story-container timeline font-options"}>
             <h1 className={"roadmap-timeline about-title"}>Roadmap</h1>
             <div className={"roadmap-contents"}>
                 Coming soon...
             </div>
             <img className={'park-construction'} src={parkConstruction}/>
+            <img className={'park-placeholder'} src={parkPlaceholder}/>
 
             <div className={"animated-banner dark slideleft"} style={{backgroundImage: `url(${bannerMedium})`}}> </div>
             <div className={"animated-banner light slideright"} style={{backgroundImage: `url(${bannerMedium})`}}> </div>

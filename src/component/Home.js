@@ -6,7 +6,7 @@ import './Style.css'
 import Web3 from "web3";
 
 import bgimage from "../asset/parkday.png";
-import mirror from "../asset/mirror_transparent.png";
+import mirror from "../asset/mirror_transparent2.png";
 import banner from "../asset/banner_transparent.png";
 import bannerSmall from "../asset/banner_transparent_25px.png";
 import bannerMedium from "../asset/banner_transparent_55px.png";
