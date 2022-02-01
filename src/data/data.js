@@ -30,7 +30,7 @@ export const team = [
 
 export const social = [
     /* for the footer, normal colors */
-    { name: "Twitter", link: "https://twitter.com/hammyfrens", image: twitter, key: "1" },
+    { name: "Twitter", link: "https://twitter.com/hammyfrensNFT", image: twitter, key: "1" },
     /*{ name: "Discord", link: "https://discord.gg/hamstarznft", image: discord, key: "2" },*/
     /*{ name: "Instagram", link: "https://www.instagram.com/", image: instagram, key: "3" },*/
    /* { name: "Sea", link: "https://opensea.io/collection/", image: sea_black, key: "4" },*/
@@ -38,7 +38,7 @@ export const social = [
 
 export const home_social = [
     /* for header area */
-    { name: "Twitter", link: "https://twitter.com/hammyfrens", image: twitter_white, key: "1" },
+    { name: "Twitter", link: "https://twitter.com/hammyfrensNFT", image: twitter_white, key: "1" },
     /*{ name: "Discord", link: "https://discord.gg/hamstarznft", image: discord_white, key: "2" },*/
     /*{ name: "Instagram", link: "https://www.instagram.com/", image: insta_white, key: "3" },*/
     /*{ name: "Sea", link: "https://opensea.io/collection/", image: sea, key: "4" },*/
