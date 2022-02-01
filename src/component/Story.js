@@ -21,8 +21,8 @@ function Story({ myref }) {
                     <div className={"story-contents-container"}>
                         <p className={"description desc-title"}>Want to be a kid all day, everyday?</p>
                         
-                        <p className={"description desc-intro"}>Hammy frens is about unleasing your inner child and recreating your favorite childhood memories. 
-                        Adult life is tough enough, so let's drown out the noise, escape our adult duties, and go on adventures together!
+                        <p className={"description desc-intro"}>Hammy frens is about unleashing your inner child and recreating your favorite childhood memories. 
+                        Adult life is tough, so let's drown out the noise, escape our adult duties, and go on adventures together!
                         </p>
                         <p className={"description desc-ending"}>Join your hammy frens and play all day! </p>
 
