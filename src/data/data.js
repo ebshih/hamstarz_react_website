@@ -18,7 +18,7 @@ export const story = {
 export const faq = [
     { question: "What are hammy frens?", answer: "The cutest hamsters in existence. We love hammys!", key: '1' },
     { question: "What is the release date and price?", answer: "We are planning to launch on Solana in February. Details to be determined~", key: '3' },
-    { question: "How can I join hammy frens?", answer: "Follow us on twitter and retweet for your chance to join our closed Discord~", key: '6' }
+    { question: "How can I join hammy frens?", answer: "Follow us on Twitter and join our Discord for the latest info~", key: '6' }
 ]
 
 export const team = [
@@ -31,7 +31,7 @@ export const team = [
 export const social = [
     /* for the footer, normal colors */
     { name: "Twitter", link: "https://twitter.com/hammyfrensNFT", image: twitter, key: "1" },
-    /*{ name: "Discord", link: "https://discord.gg/hamstarznft", image: discord, key: "2" },*/
+    { name: "Discord", link: "https://discord.gg/hammyfrens", image: discord, key: "2" },
     /*{ name: "Instagram", link: "https://www.instagram.com/", image: instagram, key: "3" },*/
    /* { name: "Sea", link: "https://opensea.io/collection/", image: sea_black, key: "4" },*/
 ]
@@ -39,7 +39,7 @@ export const social = [
 export const home_social = [
     /* for header area */
     { name: "Twitter", link: "https://twitter.com/hammyfrensNFT", image: twitter_white, key: "1" },
-    /*{ name: "Discord", link: "https://discord.gg/hamstarznft", image: discord_white, key: "2" },*/
+    { name: "Discord", link: "https://discord.gg/hammyfrens", image: discord_white, key: "2" },
     /*{ name: "Instagram", link: "https://www.instagram.com/", image: insta_white, key: "3" },*/
     /*{ name: "Sea", link: "https://opensea.io/collection/", image: sea, key: "4" },*/
 ]
