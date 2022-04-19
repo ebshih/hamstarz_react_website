@@ -113,6 +113,33 @@
     width: 60px;
 }
 
+.mint-menu-button {
+    /*color: #ffec00;*/
+    color: #fdcc50;
+    background-color: rgb(78, 68, 206);
+    border-radius: 3px;
+    margin-right: 16px; /*override the default 32px margin and add 16px of that as padding so the background is more*/
+    padding: 0 16px;
+}
+
+@-webkit-keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 #5a67b1;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 #5a67b1;
+    }
+}
+
+.mint-menu-button:hover, .mint-button:hover {
+    -webkit-animation: pulse 1s;
+    animation: pulse 1s;
+    box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
+}
+
 .bottom-border {
     border-bottom: 3px solid black;
 }
@@ -301,12 +328,13 @@
 
 .connect-button, .mint-button, .market-button {
     height: 60px;
-    width: 240px;
+    width: 200px;
     margin-top: 16px;
     font-size: 26px;
     font-weight: 900;
     /*background-color: #37e273;*/
-    background-color: #fff362;
+    /*background-color: #fff362; previous color */
+    background-color: #fdcc50;
     border-radius: 5px;
     align-items: center;
     justify-content: center;
@@ -980,6 +1008,10 @@
 
     .menu-text:hover{
         color: #515151;
+    }
+
+    .menu-text.mint-menu-button:hover {
+        color: white;
     }
 
     .home-container{
