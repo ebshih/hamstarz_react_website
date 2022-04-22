@@ -124,7 +124,7 @@
 
 @-webkit-keyframes pulse {
     0% {
-      box-shadow: 0 0 0 0 #5a67b1;
+      box-shadow: 0 0 0 0 #5a67b1; /* original was #ef8f6e*/
     }
 }
 
@@ -138,6 +138,11 @@
     -webkit-animation: pulse 1s;
     animation: pulse 1s;
     box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
+}
+
+.home-mint-button {
+    margin-top: 24px;
+    margin-bottom: 16px;
 }
 
 .bottom-border {

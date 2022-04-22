@@ -23,6 +23,10 @@ function Navigation({ scrollTo }) {
         
 
         <div className={"menu-container"}>
+          <h2 onClick={(e) => {
+                            e.preventDefault();
+                            window.open("https://mint.hammyfrens.com", '_self');
+                        }} className={"menu-text mint-menu-button"}>Mint</h2>
           <h2 onClick={() => ClickedMenu("s")} className={"menu-text"}>Story</h2>
           <h2 onClick={() => ClickedMenu("t")} className={"menu-text"}>Roadmap</h2>
           <h2 onClick={() => ClickedMenu("f")} className={"menu-text"}>FAQ</h2>
@@ -44,6 +48,10 @@ function Navigation({ scrollTo }) {
       </div>
       {show ?
         <div className={'mobile-menu'}>
+          <h2 onClick={(e) => {
+                            e.preventDefault();
+                            window.open("https://mint.hammyfrens.com", '_self');
+                        }} className={"menu-text mint-menu-button"}>Mint</h2>
           <h2 onClick={() => ClickedMenu("s")} className={"menu-text"}>Story</h2>
           <h2 onClick={() => ClickedMenu("t")} className={"menu-text"}>Roadmap</h2>
           <h2 onClick={() => ClickedMenu("f")} className={"menu-text"}>FAQ</h2>

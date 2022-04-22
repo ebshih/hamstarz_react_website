@@ -17,7 +17,7 @@ export const story = {
 
 export const faq = [
     { question: "What are hammy frens?", answer: "The cutest 1,111 hamsters in existence. We love hammys!", key: '1' },
-    { question: "What is the release date and price?", answer: "Free whitelist mint on April 22. Public mint on April 29 for 0.1 SOL per hammy~", key: '3' },
+    { question: "What is the release date and price?", answer: "Free whitelist mint on April 22. Public mint on April 24 for 0.1 SOL per hammy~", key: '3' },
     { question: "How can I join hammy frens?", answer: "Join our Discord for the latest info~", key: '6' }
 ]
 

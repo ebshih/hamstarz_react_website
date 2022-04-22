@@ -256,6 +256,13 @@ function Home({ myref }) {
 
                 <img className={'outfit-img'} src={mirror}/>
 
+                <div>
+                    <button onClick={(e) => {
+                            e.preventDefault();
+                            window.open("https://mint.hammyfrens.com", '_self');
+                        }} class="mint-button home-mint-button">Mint</button>
+                    <div className={"spacer-horiz-XLarge"}/>
+                </div>
                 <div className={"animated-banner"} style={{backgroundImage: `url(${bannerMedium})`}}> </div>
 
                 
