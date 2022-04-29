@@ -259,8 +259,8 @@ function Home({ myref }) {
                 <div>
                     <button onClick={(e) => {
                             e.preventDefault();
-                            window.open("https://hammyfrens.com", '_self');
-                        }} class="mint-button home-mint-button">Sold Out!</button>
+                            window.open("https://magiceden.io/marketplace/hammyfrens", '_self');
+                        }} class="mint-button home-mint-button">Buy on Magic Eden</button>
                     <div className={"spacer-horiz-XLarge"}/>
                 </div>
                 <div className={"animated-banner"} style={{backgroundImage: `url(${bannerMedium})`}}> </div>

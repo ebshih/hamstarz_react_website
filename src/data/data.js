@@ -25,7 +25,6 @@ export const team = [
     { name: "Lily", image: hammy1, desc: "Artist & Creative Lead", fb: "https://www.facebook.com/Lillipie102", key: "1" },
     { name: "Eric", image: hammy2, desc: "Lead Developer & Tech", key: "2" },
     { name: "Derp", image: hammy4, desc: "Community & Marketing Lead", key: "4" },
-    { name: "iFOMOd", image: ifomodpic, desc: "Strategic Advisor", key: "5" },
 ]
 
 export const social = [
